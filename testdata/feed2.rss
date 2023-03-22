@@ -1,0 +1,1443 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+  <channel>
+    <title>あぼぼーぼ・ぼーぼぼ</title>
+    <link>https://aboy-perry.hatenablog.com/</link>
+    <description>のんびり生きたい</description>
+    <lastBuildDate>Mon, 20 Mar 2023 00:16:49 +0900</lastBuildDate>
+    <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+    <generator>Hatena::Blog</generator>
+
+
+
+        <item>
+          <title>書籍『Go言語プログラミングエッセンス』を読んだ2</title>
+          <link>https://aboy-perry.hatenablog.com/entry/2023/03/20/001649</link>          <description>&lt;p&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/B0BVZCJQ4F&quot;&gt;https://www.amazon.co.jp/dp/B0BVZCJQ4F&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;知っていることは復習がてらfmfmと読めて、知らないこともたくさんあって楽しかったです。つどつど見返すGoの本がまた増えましたね。&lt;/p&gt;
+
+&lt;p&gt;以下、メモの中からかいつまんで。&lt;/p&gt;
+
+&lt;p&gt;1章はGoの特徴に触れながらなぜGoが選ばれているのかという話。レビューのしやすさ、周辺ツールの充実感はたしかに感じます。&lt;/p&gt;
+
+&lt;p&gt;3章は基本的な文法について。Clockwise Spiral Ruleは初めて知りました。あとは&lt;code&gt;var _ I = (*foo)(nil)&lt;/code&gt; のようにブランク変数を使うことで、型がインタフェースを実装していなければ&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%A5%B3%A5%F3%A5%D1%A5%A4%A5%EB&quot;&gt;コンパイル&lt;/a&gt;エラーで（なんならその前に&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/IDE&quot;&gt;IDE&lt;/a&gt;が検知して）気づけるというテクニック便利だなと。&lt;/p&gt;
+
+&lt;p&gt;4章は基本とベストプ&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%A5%E9%A5%AF&quot;&gt;ラク&lt;/a&gt;ティス。recoverはまだ使ったことないですが、手札として持っておきたい。その後のコラムが面白かったです。発生しうるエラーを明示的に伝えるコード例は他の言語の人からするとギョっとするかもですね。あとは、ビルドタグにignoreを指定すると、サンプルコードとしてmain関数書かれたコードも共存できるのは便利そうでした。&lt;/p&gt;
+
+&lt;p&gt;5章はWebアプリケーション関連、普段触れている業務の世界に近いのもあって復習がてら。色々な書籍を読んだつもりでしたが、html/templateパッケージについてざっと触れられたのはこれが初めてだったかもしれません。&lt;/p&gt;
+
+&lt;p&gt;6章は速いプログラムのためのテクニックということで、個人的に最も関心のある領域。特に最初に書かれてあった、I/Oが絡む処理など並行処理を行う部分の見極めが重要、というのは煎じて飲みたいくらい意識したいと思いました。あとはCとの比較検証も面白かったです。&lt;/p&gt;
+
+&lt;p&gt;7章はテストまわり。&lt;code&gt;t.Short&lt;/code&gt;は知らなかったのですが、例えば統合テストをビルドタグで分けるような使い方はイメージしていましたが、&lt;code&gt;t.Short&lt;/code&gt;を使いたい場面ってどんなのがありますかね。テスト関数単位でスキップできるので、時間のかかる&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%A5%D9%A5%F3%A5%C1%A5%DE%A1%BC%A5%AF&quot;&gt;ベンチマーク&lt;/a&gt;を普段はスキップするとかに使えそうかな。&lt;/p&gt;
+
+&lt;p&gt;8章は&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%A5%D9%A5%F3%A5%C1%A5%DE%A1%BC%A5%AF&quot;&gt;ベンチマーク&lt;/a&gt;。業務でも計測しつつチューニングしているのでかなり興味ある領域。&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%A5%D9%A5%F3%A5%C1%A5%DE%A1%BC%A5%AF&quot;&gt;ベンチマーク&lt;/a&gt;の比較について、昔なにかで見たことあるなと思ったらmattnさん(著者)のブログでした &lt;a href=&quot;https://mattn.kaoriya.net/software/lang/go/20161019124907.htm&quot;&gt;golang でパフォーマンスチューニングする際に気を付けるべきこと | Big Sky&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;9章は&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/CLI&quot;&gt;CLI&lt;/a&gt;アプリケーションで、実際にお題を元に作っていくので、ハンズオンっぽく読めます。データベース操作はここで初めて出てきますが、この後12章でしっかり説明されますね。&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/CLI&quot;&gt;CLI&lt;/a&gt;は標準ライブラリだけで作るより潔く&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/cobra&quot;&gt;cobra&lt;/a&gt;などのパッケージを使ったほうが色々&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%A5%E9%A5%AF&quot;&gt;ラク&lt;/a&gt;ですね。&lt;/p&gt;
+
+&lt;p&gt;10章はWebアプリケーションのハンズオンのような内容で、9章もそうでしたが、TODOアプリ、リマインダー送信アプリのように分けてそれぞれ作るように書かれているところが好きでした。&lt;/p&gt;
+
+&lt;p&gt;11章は&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/GitHub&quot;&gt;GitHub&lt;/a&gt;を使ってパッケージを公開する一連の流れが分かります。この章だけ見ても、1章に書かれていた「パッケージ公開の簡単さ」を感じられるはずです。「当然ですがテストを書きましょう p278」いいですね。&lt;/p&gt;
+
+&lt;p&gt;12章はデータベースについて。要件に適したパッケージ使うのがいいですね。&lt;/p&gt;
+
+&lt;p&gt;13章は&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%A5%AF%A5%E9%A5%A6%A5%C9&quot;&gt;クラウド&lt;/a&gt;サービス関連で、どの&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%A5%AF%A5%E9%A5%A6%A5%C9&quot;&gt;クラウド&lt;/a&gt;使うにせよ簡単にデプロイできるなぁと改めて思いました。あとバイナリサイズを小さくするコラムは役立ちそう。&lt;/p&gt;
+</description>          <pubDate>Mon, 20 Mar 2023 00:16:49 +0900</pubDate>
+          <guid isPermalink="false">hatenablog://entry/4207112889973001239</guid>
+
+            <category>Go</category>
+
+            <category>読書ログ</category>
+
+          <enclosure url="https://m.media-amazon.com/images/I/41ECftb0jjL.jpg" type="image/jpeg" length="0" />
+        </item>
+
+
+
+
+        <item>
+          <title>Go 1.19.3 and 1.18.8 security fix の内容を読んだ</title>
+          <link>https://aboy-perry.hatenablog.com/entry/2022/12/20/234833</link>          <description>&lt;p&gt;今更ながら Go 1.93 及び 1.8.8 のマイナーリリース、security fix の内容について。&lt;/p&gt;
+
+&lt;p&gt;リリース内容はこちら&lt;/p&gt;
+
+&lt;p&gt;&lt;iframe src=&quot;https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgroups.google.com%2Fg%2Fgolang-announce%2Fc%2FmbHY1UY3BaM&quot; title=&quot;[security] Go 1.19.3 and Go 1.18.8 are released&quot; class=&quot;embed-card embed-webcard&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&quot; loading=&quot;lazy&quot;&gt;&lt;/iframe&gt;&lt;cite class=&quot;hatena-citation&quot;&gt;&lt;a href=&quot;https://groups.google.com/g/golang-announce/c/mbHY1UY3BaM&quot;&gt;groups.google.com&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;どういう問題があったか&quot;&gt;どういう問題があったか&lt;/h2&gt;
+
+&lt;p&gt;&lt;iframe src=&quot;https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgithub.com%2Fgolang%2Fgo%2Fissues%2F56284&quot; title=&quot;syscall, os/exec: unsanitized NUL in environment variables · Issue #56284 · golang/go&quot; class=&quot;embed-card embed-webcard&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&quot; loading=&quot;lazy&quot;&gt;&lt;/iframe&gt;&lt;cite class=&quot;hatena-citation&quot;&gt;&lt;a href=&quot;https://github.com/golang/go/issues/56284&quot;&gt;github.com&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/Windows&quot;&gt;Windows&lt;/a&gt;において、&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%B4%C4%B6%AD%CA%D1%BF%F4&quot;&gt;環境変数&lt;/a&gt;をサブプロセスに渡す際にヌル文字（NUL）が含まれていると別の&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%B4%C4%B6%AD%CA%D1%BF%F4&quot;&gt;環境変数&lt;/a&gt;を設定できてしまう。例えば “A=B\x00C=D” という文字列を解釈すると&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%B4%C4%B6%AD%CA%D1%BF%F4&quot;&gt;環境変数&lt;/a&gt;として A=B, C=D と設定できるということ。&lt;/p&gt;
+
+&lt;h2 id=&quot;修正内容&quot;&gt;修正内容&lt;/h2&gt;
+
+&lt;p&gt;&lt;iframe src=&quot;https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgithub.com%2Fgolang%2Fgo%2Fcommit%2F2a7adf4ccde9734becf41acf8274d1a190f2ec64&quot; title=&quot;[release-branch.go1.19] syscall, os/exec: reject environment variable… · golang/go@2a7adf4&quot; class=&quot;embed-card embed-webcard&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&quot; loading=&quot;lazy&quot;&gt;&lt;/iframe&gt;&lt;cite class=&quot;hatena-citation&quot;&gt;&lt;a href=&quot;https://github.com/golang/go/commit/2a7adf4ccde9734becf41acf8274d1a190f2ec64&quot;&gt;github.com&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;diff の上から見ていくと、まず env_test.go は今回の&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%C0%C8%BC%E5%C0%AD&quot;&gt;脆弱性&lt;/a&gt;がテストケースとして分かりやすく表現されていて良い。&lt;/p&gt;
+
+&lt;p&gt;次に os/exec/exec.go が修正されているが、コミットメッセージを見ると、一応冗長なチェックを追加しといた（「Add a redundant check to os/exec as extra insurance.」）と書いてあるため、一旦スルー。&lt;/p&gt;
+
+&lt;p&gt;本丸は syscall/exec_&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/windows&quot;&gt;windows&lt;/a&gt;.go の修正で、createEnvBlock 関数に変更が加わっている。&lt;/p&gt;
+
+&lt;p&gt;中身を見る前に、syscall パッケージについておさらいすると、syscall パッケージは OS の&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%A5%B7%A5%B9%A5%C6%A5%E0%A5%B3%A1%BC%A5%EB&quot;&gt;システムコール&lt;/a&gt;を担当するパッケージで、syscall パッケージ内にある各 OS 専用のファイルで&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%A5%B7%A5%B9%A5%C6%A5%E0%A5%B3%A1%BC%A5%EB&quot;&gt;システムコール&lt;/a&gt;の実装が管理されている。例えば、syscall パッケージの StartProcess 関数の GoDoc には「StartProcess wraps ForkExec for package os.」と書いてある。これは &lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/Windows&quot;&gt;Windows&lt;/a&gt; なら exec_&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/windows&quot;&gt;windows&lt;/a&gt;.go の処理が呼ばれ、&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/UNIX&quot;&gt;UNIX&lt;/a&gt; なら exec_&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/unix&quot;&gt;unix&lt;/a&gt;.go の処理が呼ばれるように、実行環境に合わせた形でビルドされる。ちなみに、Go 1.4 からは syscall パッケージは基本フリーズされ、OS 固有の実装は &lt;a href=&quot;https://pkg.go.dev/golang.org/x/sys&quot;&gt;golang.org/x/sys&lt;/a&gt; で管理されている（参考：&lt;a href=&quot;https://go.googlesource.com/proposal/+/refs/heads/master/design/freeze-syscall.md&quot;&gt;https://go.googlesource.com/proposal/+/refs/heads/master/design/freeze-syscall.md&lt;/a&gt;）。&lt;/p&gt;
+
+&lt;p&gt;createdEnvBlock 関数に戻ると、この関数はざっくり言うと&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%B4%C4%B6%AD%CA%D1%BF%F4&quot;&gt;環境変数&lt;/a&gt;を受け取って、その後の処理に必要な形に変換している。今回の修正では、error を返すようになった。どういうときに error を返すかというと、&lt;code&gt;if bytealg.IndexByteString(s, 0) != -1 {&lt;/code&gt; のときに error を返すようになった。&lt;/p&gt;
+
+&lt;p&gt;この bytealg パッケージの IndexByteString 関数が何をやってるか調べる。まず bytealg パッケージは internal なパッケージだった。IndexByteString 関数は、pkg.go.dev を見ても特にコメントが無かったため、実装を見にいく。&lt;/p&gt;
+
+&lt;p&gt;&lt;iframe src=&quot;https://hatenablog-parts.com/embed?url=https%3A%2F%2Fpkg.go.dev%2Finternal%2Fbytealg%23IndexByteString&quot; title=&quot;bytealg package - internal/bytealg - Go Packages&quot; class=&quot;embed-card embed-webcard&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&quot; loading=&quot;lazy&quot;&gt;&lt;/iframe&gt;&lt;cite class=&quot;hatena-citation&quot;&gt;&lt;a href=&quot;https://pkg.go.dev/internal/bytealg#IndexByteString&quot;&gt;pkg.go.dev&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;bytealg.IndexByteString 関数の実装は多分こちら。&lt;/p&gt;
+
+&lt;p&gt;&lt;iframe src=&quot;https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgo.dev%2Fsrc%2Finternal%2Fbytealg%2Findexbyte_generic.go&quot; title=&quot;- The Go Programming Language&quot; class=&quot;embed-card embed-webcard&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&quot; loading=&quot;lazy&quot;&gt;&lt;/iframe&gt;&lt;cite class=&quot;hatena-citation&quot;&gt;&lt;a href=&quot;https://go.dev/src/internal/bytealg/indexbyte_generic.go&quot;&gt;go.dev&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;実装を見ると、文字列とバイトを受け取って、文字列を一文字ずつ for で回してバイトと同じ要素が見つかったらそのインデックスを返し、見つからなかったら -1 を返すということをしている。&lt;/p&gt;
+
+&lt;p&gt;(internal パッケージなのでコピペして) &lt;a href=&quot;https://go.dev/play/p/H69SJvwwV8w&quot;&gt;playground&lt;/a&gt; で動かしてみると、実際にヌル文字がインデックス3つ目にあることを検知できた。&lt;/p&gt;
+
+&lt;pre class=&quot;code lang-go&quot; data-lang=&quot;go&quot; data-unlink&gt;&lt;span class=&quot;synStatement&quot;&gt;package&lt;/span&gt; main
+
+&lt;span class=&quot;synStatement&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;synConstant&quot;&gt;&amp;quot;fmt&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;synStatement&quot;&gt;func&lt;/span&gt; main() {
+    fmt.Println(IndexByteString(&lt;span class=&quot;synConstant&quot;&gt;&amp;quot;A=B&lt;/span&gt;&lt;span class=&quot;synSpecial&quot;&gt;\x00&lt;/span&gt;&lt;span class=&quot;synConstant&quot;&gt;C=D&amp;quot;&lt;/span&gt;, &lt;span class=&quot;synConstant&quot;&gt;0&lt;/span&gt;)) &lt;span class=&quot;synComment&quot;&gt;// 3&lt;/span&gt;
+}
+
+&lt;span class=&quot;synStatement&quot;&gt;func&lt;/span&gt; IndexByteString(s &lt;span class=&quot;synType&quot;&gt;string&lt;/span&gt;, c &lt;span class=&quot;synType&quot;&gt;byte&lt;/span&gt;) &lt;span class=&quot;synType&quot;&gt;int&lt;/span&gt; {
+    &lt;span class=&quot;synStatement&quot;&gt;for&lt;/span&gt; i := &lt;span class=&quot;synConstant&quot;&gt;0&lt;/span&gt;; i &amp;lt; &lt;span class=&quot;synStatement&quot;&gt;len&lt;/span&gt;(s); i++ {
+        &lt;span class=&quot;synStatement&quot;&gt;if&lt;/span&gt; s[i] == c {
+            &lt;span class=&quot;synStatement&quot;&gt;return&lt;/span&gt; i
+        }
+    }
+    &lt;span class=&quot;synStatement&quot;&gt;return&lt;/span&gt; -&lt;span class=&quot;synConstant&quot;&gt;1&lt;/span&gt;
+}
+&lt;/pre&gt;
+
+
+&lt;p&gt;よって、&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/Windows&quot;&gt;Windows&lt;/a&gt; において&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%B4%C4%B6%AD%CA%D1%BF%F4&quot;&gt;環境変数&lt;/a&gt;の文字列を解釈する処理中に、ヌル文字を見つけて error を返すような変更が加わったということが確認できた。&lt;/p&gt;
+</description>          <pubDate>Tue, 20 Dec 2022 23:48:33 +0900</pubDate>
+          <guid isPermalink="false">hatenablog://entry/4207112889946821757</guid>
+
+            <category>Go</category>
+
+          <enclosure url="https://cdn.blog.st-hatena.com/images/theme/og-image-1500.png" type="image/png" length="0" />
+        </item>
+
+
+
+
+        <item>
+          <title>Go 1.19.2 and 1.18.7 security fix の内容を読んだ</title>
+          <link>https://aboy-perry.hatenablog.com/entry/2022/10/19/104034</link>          <description>&lt;p&gt;&lt;a href=&quot;https://groups.google.com/g/golang-announce/c/xtuG5faxtaU&quot;&gt;https://groups.google.com/g/golang-announce/c/xtuG5faxtaU&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;3つの security fix が含まれている。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;archive/tar : ヘッダー読み込み時のメモリ消費量に制限をかけた&lt;/li&gt;
+&lt;li&gt;net/http/httputil : ReverseProxy でパース不可能なクエリパラメータを転送しないようにした&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/regexp&quot;&gt;regexp&lt;/a&gt;/syntax : &lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%C0%B5%B5%AC%C9%BD%B8%BD&quot;&gt;正規表現&lt;/a&gt;をパースする際のメモリ使用量の制限をかけた&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2 id=&quot;archivetar--ヘッダー読み込み時のメモリ消費量に制限をかけた&quot;&gt;archive/tar : ヘッダー読み込み時のメモリ消費量に制限をかけた&lt;/h2&gt;
+
+&lt;p&gt;Issue &lt;a href=&quot;https://github.com/golang/go/issues/54853&quot;&gt;https://github.com/golang/go/issues/54853&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Reader.Read はファイルヘッダの最大サイズに制限を設けていなかった。悪意をもって作られた&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%A5%A2%A1%BC%A5%AB%A5%A4%A5%D6&quot;&gt;アーカイブ&lt;/a&gt;は Read に無制限のメモリを割り当て、リソースの枯渇やパニックを引き起こす可能性があった。&lt;/p&gt;
+
+&lt;p&gt;Reader.Read はヘッダーブロックの最大サイズを 1MiB に制限するようになった。&lt;a href=&quot;https://github.com/golang/go/commit/4fa773cdefd20be093c84f731be7d4febf5536fa#diff-4ebefae9c611725ef8aa0c271ff2e51b502d31dd72f15ff1959e85af424e3f46R148&quot;&gt;1MiB は libarchive の仕様に合わせている&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;コードを見ると、&lt;a href=&quot;https://github.com/golang/go/commit/4fa773cdefd20be093c84f731be7d4febf5536fa#diff-4ebefae9c611725ef8aa0c271ff2e51b502d31dd72f15ff1959e85af424e3f46R149&quot;&gt;1MiB を &lt;code&gt;maxSpecialFileSize = 1 &amp;lt;&amp;lt; 20&lt;/code&gt; と定義している。&lt;/a&gt; &lt;code&gt;&amp;lt;&amp;lt;&lt;/code&gt; は Arithmetic operators (算術&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%B1%E9%BB%BB%BB%D2&quot;&gt;演算子&lt;/a&gt;) の中の left shift と呼ばれる。左シフトは、左辺の値を右辺の値だけ左へシフトする（例 &lt;code&gt;0001&lt;/code&gt; =&gt; &lt;code&gt;0010&lt;/code&gt;）。&lt;a href=&quot;https://academy.gmocloud.com/keywords/20170510/4314&quot;&gt;MiB はメビ・バイトという単位。コンピューターの容量や記憶装置の大きさを表す単位のひとつとして利用される。&lt;/a&gt;。MB（メ&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%A5%AC%A5%D0%A5%A4%A5%C8&quot;&gt;ガバイト&lt;/a&gt;）は10の6乗バイト（1MB = 100万B）となるが、1MiB は2の20乗バイト（1MiB = 104万8576B）となる。&lt;/p&gt;
+
+&lt;h2 id=&quot;nethttphttputil--ReverseProxy-でパース不可能なクエリパラメータを転送しないようにした&quot;&gt;net/http/httputil : ReverseProxy でパース不可能なクエリパラメータを転送しないようにした&lt;/h2&gt;
+
+&lt;p&gt;issue &lt;a href=&quot;https://github.com/golang/go/issues/54663&quot;&gt;https://github.com/golang/go/issues/54663&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ReverseProxy でリク&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%A5%A8%A5%B9&quot;&gt;エス&lt;/a&gt;トを転送するときに、パースできないクエリパラメータも含まれていた。クエリパラメータの密輸が可能ということが&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%C0%C8%BC%E5%C0%AD&quot;&gt;脆弱性&lt;/a&gt;なのかセキュリティ強化策なのかは微妙なところだが、CVE を割り当て&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%C0%C8%BC%E5%C0%AD&quot;&gt;脆弱性&lt;/a&gt;として扱うことにした。&lt;/p&gt;
+
+&lt;p&gt;下位互換性を保ちつつ修正する方法として、&lt;a href=&quot;https://github.com/golang/go/issues/54663#issuecomment-1244800819&quot;&gt;条件付きでパースできないクエリパラメータを削除するようにした。&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;regexpsyntax--正規表現をパースする際のメモリ使用量の制限をかけた&quot;&gt;&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/regexp&quot;&gt;regexp&lt;/a&gt;/syntax : &lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%C0%B5%B5%AC%C9%BD%B8%BD&quot;&gt;正規表現&lt;/a&gt;をパースする際のメモリ使用量の制限をかけた&lt;/h2&gt;
+
+&lt;p&gt;issue &lt;a href=&quot;https://github.com/golang/go/issues/55949&quot;&gt;https://github.com/golang/go/issues/55949&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;解析される各&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%C0%B5%B5%AC%C9%BD%B8%BD&quot;&gt;正規表現&lt;/a&gt;は 256MB のメモリフットプリントに制限されるようになり、ネストが深い&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%C0%B5%B5%AC%C9%BD%B8%BD&quot;&gt;正規表現&lt;/a&gt;などそれ以上の容量を必要とする&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%C0%B5%B5%AC%C9%BD%B8%BD&quot;&gt;正規表現&lt;/a&gt;が拒否されるようになった。&lt;/p&gt;
+
+&lt;p&gt;この修正ではサイズが大きすぎる&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%C0%B5%B5%AC%C9%BD%B8%BD&quot;&gt;正規表現&lt;/a&gt;に対して syntax.ErrInternalError を返すようにしたが、&lt;a href=&quot;https://github.com/golang/go/issues/56041&quot;&gt;Go 1.20 でこのエラーを変えるプロポーザル&lt;/a&gt;が出されていた。すでに Go 1.19 ではこのケースに利用できそうな syntax.ErrNestingEpth が追加されている。&lt;/p&gt;
+</description>          <pubDate>Wed, 19 Oct 2022 10:40:34 +0900</pubDate>
+          <guid isPermalink="false">hatenablog://entry/4207112889928638508</guid>
+
+            <category>Go</category>
+
+          <enclosure url="https://cdn.blog.st-hatena.com/images/theme/og-image-1500.png" type="image/png" length="0" />
+        </item>
+
+
+
+
+        <item>
+          <title>http.NewRequestがerrorを返すパターン</title>
+          <link>https://aboy-perry.hatenablog.com/entry/2022/08/26/053510</link>          <description>&lt;p&gt;以下のPRをマージする過程で調べる必要があったのでメモしておく。&lt;/p&gt;
+
+&lt;p&gt;&lt;iframe src=&quot;https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgithub.com%2Fgoogle%2Fgo-github%2Fpull%2F2397&quot; title=&quot;Add hooks support for WebSub (formerly PubSubHubbub) protocol by YuyaAbo · Pull Request #2397 · google/go-github&quot; class=&quot;embed-card embed-webcard&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&quot; loading=&quot;lazy&quot;&gt;&lt;/iframe&gt;&lt;cite class=&quot;hatena-citation&quot;&gt;&lt;a href=&quot;https://github.com/google/go-github/pull/2397&quot;&gt;github.com&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;結論&lt;code&gt;http.NewRequest&lt;/code&gt;がerrorを返すパターンは、HTTPメソッドが不正な場合と、URLのパースに失敗した場合の2パターンある。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;http.NewRequest&lt;/code&gt;はgodocにもあるとおり&lt;code&gt;http.NewRequestWithContext&lt;/code&gt;に&lt;code&gt;context.Background&lt;/code&gt;を指定して呼び出すラッパーになっている。&lt;/p&gt;
+
+&lt;pre class=&quot;code lang-go&quot; data-lang=&quot;go&quot; data-unlink&gt;&lt;span class=&quot;synComment&quot;&gt;// NewRequest wraps NewRequestWithContext using context.Background.&lt;/span&gt;
+&lt;span class=&quot;synStatement&quot;&gt;func&lt;/span&gt; NewRequest(method, url &lt;span class=&quot;synType&quot;&gt;string&lt;/span&gt;, body &lt;span class=&quot;synType&quot;&gt;io.Reader&lt;/span&gt;) (*Request, &lt;span class=&quot;synType&quot;&gt;error&lt;/span&gt;) {
+    &lt;span class=&quot;synStatement&quot;&gt;return&lt;/span&gt; NewRequestWithContext(context.Background(), method, url, body)
+}
+&lt;/pre&gt;
+
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/golang/go/blob/master/src/net/http/request.go#L835-L838&quot;&gt;https://github.com/golang/go/blob/master/src/net/http/request.go#L835-L838&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;NewRequestWithContext&lt;/code&gt;がerrorを返すパターンは、&lt;code&gt;validMethod&lt;/code&gt;でHTTPメソッドが不正な値だった場合と、contextが&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/nil&quot;&gt;nil&lt;/a&gt;だった場合と、&lt;code&gt;urlpkg.Parse&lt;/code&gt;でURLのパースに失敗した場合の3パターンある。このうち、contextが&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/nil&quot;&gt;nil&lt;/a&gt;であるパターンは&lt;code&gt;http.NewRequest&lt;/code&gt;では起こらないので、残りの2パターンとなる。&lt;/p&gt;
+
+&lt;pre class=&quot;code lang-go&quot; data-lang=&quot;go&quot; data-unlink&gt;&lt;span class=&quot;synStatement&quot;&gt;func&lt;/span&gt; NewRequestWithContext(ctx context.Context, method, url &lt;span class=&quot;synType&quot;&gt;string&lt;/span&gt;, body &lt;span class=&quot;synType&quot;&gt;io.Reader&lt;/span&gt;) (*Request, &lt;span class=&quot;synType&quot;&gt;error&lt;/span&gt;) {
+    &lt;span class=&quot;synStatement&quot;&gt;if&lt;/span&gt; method == &lt;span class=&quot;synConstant&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt; {
+        &lt;span class=&quot;synComment&quot;&gt;// We document that &amp;quot;&amp;quot; means &amp;quot;GET&amp;quot; for Request.Method, and people have&lt;/span&gt;
+        &lt;span class=&quot;synComment&quot;&gt;// relied on that from NewRequest, so keep that working.&lt;/span&gt;
+        &lt;span class=&quot;synComment&quot;&gt;// We still enforce validMethod for non-empty methods.&lt;/span&gt;
+        method = &lt;span class=&quot;synConstant&quot;&gt;&amp;quot;GET&amp;quot;&lt;/span&gt;
+    }
+    &lt;span class=&quot;synStatement&quot;&gt;if&lt;/span&gt; !validMethod(method) {
+        &lt;span class=&quot;synStatement&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;synStatement&quot;&gt;nil&lt;/span&gt;, fmt.Errorf(&lt;span class=&quot;synConstant&quot;&gt;&amp;quot;net/http: invalid method %q&amp;quot;&lt;/span&gt;, method)
+    }
+    &lt;span class=&quot;synStatement&quot;&gt;if&lt;/span&gt; ctx == &lt;span class=&quot;synStatement&quot;&gt;nil&lt;/span&gt; {
+        &lt;span class=&quot;synStatement&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;synStatement&quot;&gt;nil&lt;/span&gt;, errors.New(&lt;span class=&quot;synConstant&quot;&gt;&amp;quot;net/http: nil Context&amp;quot;&lt;/span&gt;)
+    }
+    u, err := urlpkg.Parse(url)
+    &lt;span class=&quot;synStatement&quot;&gt;if&lt;/span&gt; err != &lt;span class=&quot;synStatement&quot;&gt;nil&lt;/span&gt; {
+        &lt;span class=&quot;synStatement&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;synStatement&quot;&gt;nil&lt;/span&gt;, err
+    }
+&lt;span class=&quot;synComment&quot;&gt;// 省略&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/golang/go/blob/f64f12f0b32eba7d49c259480e0fa0c79eb47600/src/net/http/request.go#L862-L878&quot;&gt;https://github.com/golang/go/blob/f64f12f0b32eba7d49c259480e0fa0c79eb47600/src/net/http/request.go#L862-L878&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;今回&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/google&quot;&gt;google&lt;/a&gt;/go-&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/github&quot;&gt;github&lt;/a&gt;に出したPRで追加したメソッドは、内部で&lt;code&gt;http.NewRequest&lt;/code&gt;にPOSTを指定しているためHTTPメソッドが不正にはならないし、&lt;code&gt;http.NewRequest&lt;/code&gt;以前の処理でベースとなる&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/GitHub&quot;&gt;GitHub&lt;/a&gt; &lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/API&quot;&gt;API&lt;/a&gt;のURLと結合させる処理の中でURLパースをしているため、errorを返すケースは存在しないと思うが、テスト&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%A5%AB%A5%D0%A5%EC%A5%C3%A5%B8&quot;&gt;カバレッジ&lt;/a&gt;上はカバーされていないためどうしようか？となった。起こり得なさそうとはいえ、プロダクションコードでブランク識別子でerrorを握りつぶすのは悩ましいし、errcheckのような静的解析ツールを使っている場合警告が出る。今回は、テストケースとしてはカバーしないことになったが、設計に改善の余地があるのだと思う。&lt;/p&gt;
+</description>          <pubDate>Fri, 26 Aug 2022 05:35:10 +0900</pubDate>
+          <guid isPermalink="false">hatenablog://entry/4207112889911980530</guid>
+
+            <category>Go</category>
+
+          <enclosure url="https://cdn.blog.st-hatena.com/images/theme/og-image-1500.png" type="image/png" length="0" />
+        </item>
+
+
+
+
+        <item>
+          <title>『詳解Go言語Webアプリケーション開発』を読んだ</title>
+          <link>https://aboy-perry.hatenablog.com/entry/2022/08/10/081430</link>          <description>&lt;p&gt;本の約半分がハンズオン形式になっていて、実際にWeb APIを開発しながら必要となる知識をインストールできる本でした。ハンズオンで作るWeb APIはBeyond the Twelve-Factor Appに準拠した形で、お題もMySQLを使ったデータ永続化、RedisとJWTを使った認証・認可といった機能を持つTODOアプリのREST APIなので、昨今のWeb開発において実用的なお題で良かったです。&lt;/p&gt;
+
+&lt;p&gt;ハンズオンじゃない各セクションは簡潔に短くまとまっていて、「なぜ？」に答える詳細な説明はGoの公式サイトなど外部のリンクが紹介されているので、わりとサクサク読めます。&lt;/p&gt;
+
+&lt;p&gt;ハンズオンは、チーム開発するうえでも役立つことが書いてあるなと思いました。例えば &lt;a href=&quot;https://github.com/cosmtrek/air&quot;&gt;https://github.com/cosmtrek/air&lt;/a&gt; を使ってホットリロードできる構成にしたり、Makefileを用意したり、GitHub Actionsでテストや静的解析をCIしたり。ホットリロードについてはテストコードによるフィードバックサイクルとの比較から実務においては必須というわけでもない、みたいな解説がされていて結構信頼できました。ハンズオン中心の構成にするにあたっての落としどころだったのかなと想像します。&lt;/p&gt;
+
+&lt;p&gt;ただハンズオン部分は、結構解説が飛んでいるところも散見されました。手を動かしながら読むので気付きやすいのかもしれません。例えばディレクトリ構造とファイル名が明示されていない場合「今どのパッケージ（ディクレトリ）のどのファイル触っているんだ...？」となったり、新しいパッケージのgo getが無かったり、あとは単純に誤植というかコードがコンパイルできなかったりといった感じです。この辺りは、著者がGitHubでサンプルコード（&lt;a href=&quot;https://github.com/budougumi0617/go_todo_app&quot;&gt;https://github.com/budougumi0617/go_todo_app&lt;/a&gt;）を公開しているのでそれと照らし合わせながら読むのがいいです。正誤表もあるみたいです。&lt;/p&gt;
+
+&lt;p&gt;パフォーマンスチューニングや可観測性のためのロギングといった、運用していくうえで必要性が高まる領域についてはカバーしていないので、もし本書から入門した場合は『実用Go言語』や、最近発売された『Go言語による分散サービス』（まだ読んでない）などを次に読んでいくと良さそうです。&lt;/p&gt;
+
+&lt;p&gt;ハンズオン楽しかったです！&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/B0B62K55SL&quot;&gt;&amp;#x8A73;&amp;#x89E3;Go&amp;#x8A00;&amp;#x8A9E;Web&amp;#x30A2;&amp;#x30D7;&amp;#x30EA;&amp;#x30B1;&amp;#x30FC;&amp;#x30B7;&amp;#x30E7;&amp;#x30F3;&amp;#x958B;&amp;#x767A; | &amp;#x6E05;&amp;#x6C34;&amp;#x967D;&amp;#x4E00;&amp;#x90CE; | &amp;#x5DE5;&amp;#x5B66; | Kindle&amp;#x30B9;&amp;#x30C8;&amp;#x30A2; | Amazon&lt;/a&gt;&lt;/p&gt;
+</description>          <pubDate>Wed, 10 Aug 2022 08:14:30 +0900</pubDate>
+          <guid isPermalink="false">hatenablog://entry/4207112889902325165</guid>
+
+            <category>Go</category>
+
+            <category>読書ログ</category>
+
+          <enclosure url="https://m.media-amazon.com/images/I/51+2jmxkUAL.jpg" type="image/jpeg" length="0" />
+        </item>
+
+
+
+
+        <item>
+          <title>『達人が教えるWebパフォーマンスチューニング』を読んだ</title>
+          <link>https://aboy-perry.hatenablog.com/entry/2022/07/22/230920</link>          <description>&lt;p&gt;明日ISUCON予選なので読みました（白目&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/catatsuy/private-isu&quot;&gt;https://github.com/catatsuy/private-isu&lt;/a&gt;を題材に実際にチューニングをしながら理解できる構成になっています。実際のISUCONではベンチマーカーはクリックひとつで実行するだけだと思いますが、本書ではベンチマーカーのApache Benchを使う方の説明があったり、ベンチマーカーの実装についての付録があったりします。&lt;/p&gt;
+
+&lt;p&gt;サンプルコードが Go で書かれているのでぼくにとっては読みやすかったです。&lt;/p&gt;
+
+&lt;p&gt;ISUCON、ボトルネックのみ解決するという鉄則を守りたい...けど何もできないで終わるよりは出来ることを何かして終わりたいですね。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/B0B1Z9ZMY6&quot;&gt;https://www.amazon.co.jp/dp/B0B1Z9ZMY6&lt;/a&gt;&lt;/p&gt;
+</description>          <pubDate>Fri, 22 Jul 2022 23:09:20 +0900</pubDate>
+          <guid isPermalink="false">hatenablog://entry/4207112889901548430</guid>
+
+            <category>読書ログ</category>
+
+          <enclosure url="https://m.media-amazon.com/images/I/51lWRQRdhlL.jpg" type="image/jpeg" length="0" />
+        </item>
+
+
+
+
+        <item>
+          <title>『UNIXという考え方』を読んだ</title>
+          <link>https://aboy-perry.hatenablog.com/entry/2022/07/16/165157</link>          <description>&lt;p&gt;名著なのは知ってましたが読めておらず、ようやく読めました。&lt;/p&gt;
+
+&lt;p&gt;スモール・イズ・ビューティフル、できるだけ早く試作をつくる、梃子を有効に活用する、一つのことをうまくやる、あたりの考え方がとくに刺さりました。そしてUNIXコマンドはすごく考えられてるなぁと。&lt;/p&gt;
+
+&lt;p&gt;自分で何かツールを作ったり、課題解決のためのプログラムを書いたりする際に今後めちゃくちゃ意識しそうです。&lt;/p&gt;
+
+&lt;p&gt;&lt;iframe src=&quot;https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.amazon.co.jp%2Fdp%2F4274064069&quot; title=&quot;UNIXという考え方―その設計思想と哲学 | Mike Gancarz, 桂, 芳尾 |本 | 通販 | Amazon&quot; class=&quot;embed-card embed-webcard&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&quot; loading=&quot;lazy&quot;&gt;&lt;/iframe&gt;&lt;cite class=&quot;hatena-citation&quot;&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/4274064069&quot;&gt;www.amazon.co.jp&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+</description>          <pubDate>Sat, 16 Jul 2022 16:51:57 +0900</pubDate>
+          <guid isPermalink="false">hatenablog://entry/4207112889899547658</guid>
+
+            <category>読書ログ</category>
+
+          <enclosure url="https://images-na.ssl-images-amazon.com/images/I/518ME653H3L._SX330_BO1,204,203,200_.jpg" type="image/jpeg" length="0" />
+        </item>
+
+
+
+
+        <item>
+          <title>NotionのページアイコンのURLをコピーするChrome拡張をつくった</title>
+          <link>https://aboy-perry.hatenablog.com/entry/2022/07/01/044006</link>          <description>&lt;p&gt;&lt;iframe src=&quot;https://hatenablog-parts.com/embed?url=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fnotion-icon-copy%2Fgjbkcdmijbmknillkhndcgciaockijof%3Fhl%3Dja%26authuser%3D0&quot; title=&quot;notion-icon-copy&quot; class=&quot;embed-card embed-webcard&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&quot;&gt;&lt;/iframe&gt;&lt;cite class=&quot;hatena-citation&quot;&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/notion-icon-copy/gjbkcdmijbmknillkhndcgciaockijof?hl=ja&amp;authuser=0&quot;&gt;chrome.google.com&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;自前でアップロードした画像を色々なページのアイコンに設定するのをラクにするChrome拡張です。&lt;/p&gt;
+
+&lt;p&gt;Notionではアップロードした画像をページアイコンに設定できます。その画像を他のページのアイコンにも設定したければ、ページ自体を複製するしかありません。なぜかというとNotionにアップロードした画像は、はてなブログの画像とか、Slackの絵文字のように簡単に取り出せないからです。&lt;/p&gt;
+
+&lt;p&gt;ページ自体を複製するとプロパティや本文も全て複製されるのが厄介です。あとすでにあるページのアイコンを変えるというケースには使えません。&lt;/p&gt;
+
+&lt;p&gt;このChrome拡張は、アップロードした画像が保存されているS3のURLをクリップボードにコピーします。ページアイコンにはURLを設定できるので、他のページのアイコンに簡単に設定できるようになります。&lt;/p&gt;
+
+&lt;p&gt;コードはGitHubに置いてあります。&lt;/p&gt;
+
+&lt;p&gt;&lt;iframe src=&quot;https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgithub.com%2FYuyaAbo%2Fnotion-icon-copy&quot; title=&quot;GitHub - YuyaAbo/notion-icon-copy: The chrome extension copies to clipboard uploaded icon url in Notion.&quot; class=&quot;embed-card embed-webcard&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&quot;&gt;&lt;/iframe&gt;&lt;cite class=&quot;hatena-citation&quot;&gt;&lt;a href=&quot;https://github.com/YuyaAbo/notion-icon-copy&quot;&gt;github.com&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;Chrome拡張の初歩的な実装という感じですが強いて言えばTypeScript 100%になってて気持ちいいですね ( ˙σｰ˙ )&lt;/p&gt;
+</description>          <pubDate>Fri, 01 Jul 2022 04:40:06 +0900</pubDate>
+          <guid isPermalink="false">hatenablog://entry/4207112889894905780</guid>
+
+            <category>TypeScript</category>
+
+          <enclosure url="https://cdn.blog.st-hatena.com/images/theme/og-image-1500.png" type="image/png" length="0" />
+        </item>
+
+
+
+
+        <item>
+          <title>『リーダーの作法』を読んだ</title>
+          <link>https://aboy-perry.hatenablog.com/entry/2022/06/26/215848</link>          <description>&lt;p&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/4873119898:site&quot;&gt;https://www.amazon.co.jp/dp/4873119898:site&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;表紙の蜂 🐝 が毛並みも見えて結構リアルでした。&lt;/p&gt;
+
+&lt;p&gt;ぼくにとっては参考になったり魅力的に感じる章は限られていました。今の役割や興味が、この本で登場するマネージャー・ディレクター・エグゼクティブのどれにも当てはまらないですし。ただ「リーダーシップはそういった役割に限らず全員が発揮するものである」という考えは他のいくつもの本と同様にこの本でも共有されていました。&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;プロフェッショナルなリーダーとして私個人が果たすべき責任は、一刻一刻をできる限りの熱意と好奇心を持って前向きに取り組むことなのです。一見価値がないように見える状況に置かれたときでも、私は何らかの価値を見出すようにしています。価値は常にそこにあるからです。 p6 1章 誰からでも学ぶことがあると考える&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;何からでも学べると思うこと。&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;管理職に就くことは昇進ではない p46 9章 新任マネージャーのデス・スパイラル&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;別のページでキャリアラダー（はしご：上下に昇り降りするもの）ではなくキャリアパス（旅）である、と書かれていて、そうだよなぁと。&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;ほめ言葉とは、無欲で、うまく表現された、タイムリーな成果の承認のことです。 p82 14章 素敵なほめ言葉&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;改めて大事だと思いましたし、誰でも明日から意識して実践できることですね。&lt;/p&gt;
+</description>          <pubDate>Sun, 26 Jun 2022 21:58:48 +0900</pubDate>
+          <guid isPermalink="false">hatenablog://entry/4207112889893091843</guid>
+
+            <category>読書ログ</category>
+
+          <enclosure url="https://images-na.ssl-images-amazon.com/images/I/31to4r-NvQL._SX350_BO1,204,203,200_.jpg" type="image/jpeg" length="0" />
+        </item>
+
+
+
+
+        <item>
+          <title>『ユニコーン企業のひみつ』を読んだ</title>
+          <link>https://aboy-perry.hatenablog.com/entry/2022/06/18/220925</link>          <description>&lt;p&gt;&lt;cite class=&quot;hatena-citation&quot;&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/4873119464&quot;&gt;www.amazon.co.jp&lt;/a&gt;&lt;/cite&gt;&lt;iframe src=&quot;https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.amazon.co.jp%2Fdp%2F4873119464&quot; title=&quot;ユニコーン企業のひみつ ―Spotifyで学んだソフトウェアづくりと働き方 | Jonathan Rasmusson, 島田 浩二, 角谷 信太郎 |本 | 通販 - Amazon.co.jp&quot; class=&quot;embed-card embed-webcard&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
+
+&lt;p&gt;ユニコーン企業（というかSpotify）の働き方を知ることができる本。ページ数がそんなに多くないので読みやすいです。&lt;/p&gt;
+
+&lt;p&gt;あとがきにもあるように、執筆当時のスナップショット。特にこういった企業は学習のスピードが速く変化も速いので現状と差分もあるでしょう。&lt;/p&gt;
+
+&lt;p&gt;プラクティスそのものではなく、「ミッションで仕事を定義する」「権限を与えて信頼する」「チームを大事にする」といったプラクティスを支える原則や文化に焦点を当てることで考え方を変えつつ。自分たちの仕事をどこから変えるか、一歩目を踏み出す勇気が出る本だと思います。&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;思考は戦略的に、行動は局所的に p155&lt;/p&gt;&lt;/blockquote&gt;
+</description>          <pubDate>Sat, 18 Jun 2022 22:09:25 +0900</pubDate>
+          <guid isPermalink="false">hatenablog://entry/13574176438103456218</guid>
+
+            <category>読書ログ</category>
+
+          <enclosure url="https://images-fe.ssl-images-amazon.com/images/I/41cE5EmeezL._SY291_BO1,204,203,200_QL40_ML2_.jpg" type="image/jpeg" length="0" />
+        </item>
+
+
+
+
+        <item>
+          <title>『その仕事、全部やめてみよう』を読んだ</title>
+          <link>https://aboy-perry.hatenablog.com/entry/2022/06/11/032604</link>          <description>&lt;p&gt;&lt;cite class=&quot;hatena-citation&quot;&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/B08CQRKHKR&quot;&gt;www.amazon.co.jp&lt;/a&gt;&lt;/cite&gt;&lt;iframe src=&quot;https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.amazon.co.jp%2Fdp%2FB08CQRKHKR&quot; title=&quot;その仕事、全部やめてみよう――１％の本質をつかむ「シンプルな考え方」 | 小野 和俊 | ビジネス・経済 | Kindleストア | Amazon&quot; class=&quot;embed-card embed-webcard&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
+
+&lt;p&gt;谷を埋めるのではなく山をつくる「ラストマン戦略」は最近はわりと同意できる部分があって、ふむふむと読めました。&lt;/p&gt;
+
+&lt;p&gt;パフォーマンスを高めるために力を抜く、の部分もなるほど〜と。400メートル走の例は分かりやすくて、スピードに乗ると全力を出さなくてもペース維持ができたり、自分に合ったペース配分を見つけたり、みたいなことは活かせるなと思いました。400メートル全力で走れる人間はいないですからね。&lt;/p&gt;
+
+&lt;p&gt; ただ「ひよコード」のくだりあたりから本書の主題がよく分からなくなりました。山が高く尖ってる（欠点もある）例も、言いたいことはなんとなく分かりつつも、その欠点なら無くした（谷を埋めた）ほうがいいのでは？と思うような例もいくつか。「長所に目を向ける」「個性を活かす」あたりの考え方は同意なんですが。&lt;/p&gt;
+</description>          <pubDate>Sat, 11 Jun 2022 03:26:04 +0900</pubDate>
+          <guid isPermalink="false">hatenablog://entry/13574176438100954715</guid>
+
+            <category>読書ログ</category>
+
+          <enclosure url="https://m.media-amazon.com/images/I/41etReRCYfL.jpg" type="image/jpeg" length="0" />
+        </item>
+
+
+
+
+        <item>
+          <title>Goの静的解析の事始めとしてエラーラップフォーマットのLinterをつくった</title>
+          <link>https://aboy-perry.hatenablog.com/entry/2022/06/06/010144</link>          <description>&lt;p&gt;こちらのもくもく会も活用して、簡単なLinterをつくりました。&lt;/p&gt;
+
+&lt;p&gt;&lt;iframe src=&quot;https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgostaticanalysis.connpass.com%2Fevent%2F249226%2F&quot; title=&quot;Go静的解析モクモク会 Pos(1) (2022/06/05 09:00〜)&quot; class=&quot;embed-card embed-webcard&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&quot;&gt;&lt;/iframe&gt;&lt;cite class=&quot;hatena-citation&quot;&gt;&lt;a href=&quot;https://gostaticanalysis.connpass.com/event/249226/&quot;&gt;gostaticanalysis.connpass.com&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;h2&gt;つくったもの&lt;/h2&gt;
+
+&lt;p&gt;&lt;iframe src=&quot;https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgithub.com%2FYuyaAbo%2Ferrwrapfmt&quot; title=&quot;GitHub - YuyaAbo/errwrapfmt&quot; class=&quot;embed-card embed-webcard&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&quot;&gt;&lt;/iframe&gt;&lt;cite class=&quot;hatena-citation&quot;&gt;&lt;a href=&quot;https://github.com/YuyaAbo/errwrapfmt&quot;&gt;github.com&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;Goの静的解析の事始めとして、エラーのラップフォーマットの間違いを検知するLinter errwrapfmtをつくりました。&lt;/p&gt;
+
+&lt;p&gt;errwrapfmtは文字列リテラルに %w があったらエラーをラップしようとしていると判断して &lt;code&gt;: %w&lt;/code&gt;（コロン半角スペースが前方にあるか）というフォーマットになっているかどうかチェックするLinterです。文字列リテラル（正確にはBasicLit）に対してシンプルに正規表現をかけてます。&lt;/p&gt;
+
+&lt;p&gt;このLinterをつくろうと思ったきっかけは、xerrorsによるエラーのラップでこのフォーマットを間違うと、スタックトレースが一部冗長になるという問題を知ったからです。&lt;/p&gt;
+
+&lt;p&gt;Goではエラーを扱う標準パッケージのerrorsはGo 1.18現在スタックトレースに対応していません。スタックトレースを出力したければ&lt;a href=&quot;https://pkg.go.dev/github.com/pkg/errors&quot;&gt;pkg/errors&lt;/a&gt;や&lt;a href=&quot;https://pkg.go.dev/golang.org/x/xerrors&quot;&gt;xerrors&lt;/a&gt;を使う必要があります。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://pkg.go.dev/golang.org/x/xerrors#Errorf&quot;&gt;xerrors.Errorf()&lt;/a&gt;はdeprecatedになりfmt.Errorf()を使うようにgodocに書かれていますが、fmt.Errorf()を使えばそこでスタックトレースは途切れます。スタックトレースを出力したい場合依然としてxerrors.Errorf()を利用することになると思っています。xerrors.Errorf()は &lt;code&gt;: %w&lt;/code&gt; でないとラップされたエラーがスタックトレース上で冗長に表示されます。そしてこれはコンパイラでも検知されないため、事前に検知するには静的解析が有効です。&lt;/p&gt;
+
+&lt;p&gt;※スタックトレース周りの話は &lt;a href=&quot;https://aboy-perry.hatenablog.com/entry/2022/06/03/131130&quot;&gt;Go&amp;#x3067;&amp;#x30B9;&amp;#x30BF;&amp;#x30C3;&amp;#x30AF;&amp;#x30C8;&amp;#x30EC;&amp;#x30FC;&amp;#x30B9;&amp;#x3092;&amp;#x51FA;&amp;#x529B;&amp;#x3059;&amp;#x308B;&amp;#x306B;&amp;#x306F; - &amp;#x3042;&amp;#x307C;&amp;#x307C;&amp;#x30FC;&amp;#x307C;&amp;#x30FB;&amp;#x307C;&amp;#x30FC;&amp;#x307C;&amp;#x307C;&lt;/a&gt; にもうちょい詳しく書きました。&lt;/p&gt;
+
+&lt;h2&gt;参考にしたもの&lt;/h2&gt;
+
+&lt;p&gt;今回は&lt;a href=&quot;https://pkg.go.dev/golang.org/x/tools/go/analysis&quot;&gt;go/analysis&lt;/a&gt;を活用したのでだいぶ考えることが減りました。つくりたいLinterのロジックに集中できましたし、（独自の記法ではあるけど）analysistestでかなり簡単にテスト駆動開発ができるのが良かったです。&lt;/p&gt;
+
+&lt;p&gt;たくさんの参考情報をもとに理解を進めつつ、今回つくりたいものに必要最低限な知識は獲得できたかなと思います。具体的には&lt;a href=&quot;https://docs.google.com/presentation/d/1I4pHnzV2dFOMbRcpA-XD0TaLcX6PBKpls6WxGHoMjOg/edit#slide=id.g80ffbfd5e3_0_168&quot;&gt;プログラミング言語Go完全入門 14.静的解析とコード生成&lt;/a&gt;がめちゃめちゃ役立ちました。&lt;/p&gt;
+
+&lt;p&gt;あとはAST周りだと&lt;a href=&quot;https://go.dev/ref/spec&quot;&gt;Goの言語仕様&lt;/a&gt;を途中まで読んでいたので、EBNFを理解してNotationが読めるようになっていたのも大きかったです。やっぱり言語仕様に戻ってこれるのは大事です。それから&lt;a href=&quot;https://yuroyoro.github.io/goast-viewer/&quot;&gt;GoAst Viewer&lt;/a&gt;でASTの可視化をしてみたりも。&lt;/p&gt;
+
+&lt;p&gt;書籍だと&lt;a href=&quot;https://www.amazon.co.jp/dp/B09P4PH63R&quot;&gt;『エキスパートたちのGo言語』&lt;/a&gt;の第1章に循環複雑度を計測するCLIツールをつくるところがあり参考になりました。今回あえて&lt;a href=&quot;https://github.com/gostaticanalysis/skeleton&quot;&gt;gostaticanalysis/skeleton&lt;/a&gt;を使わずにつくってみましたが、結果的に似たような構成になりました。というのも書籍のなかで実装方法の参考にされていたloopclosure.go（など&lt;a href=&quot;https://github.com/golang/tools/tree/master/go/analysis/passes&quot;&gt;go/analysis/passes&lt;/a&gt;にある実装）がそういう実装になっているからです。また業務でもお世話になっているstaticcheckなどの&lt;a href=&quot;https://github.com/dominikh/go-tools&quot;&gt;https://github.com/dominikh/go-tool&lt;/a&gt;のコードも参考にしました。&lt;/p&gt;
+
+&lt;h2&gt;静的解析楽しいぞい&lt;/h2&gt;
+
+&lt;p&gt;errwrapfmt自体はあとgolangci-lint対応くらいしかやりたいことがないのですが、このくらい簡単なものを作ってみて「静的解析は結構楽しいぞ」と思えたので、またなにか作りながら学習したいですね。&lt;/p&gt;
+</description>          <pubDate>Mon, 06 Jun 2022 01:01:44 +0900</pubDate>
+          <guid isPermalink="false">hatenablog://entry/13574176438099309136</guid>
+
+            <category>Go</category>
+
+          <enclosure url="https://cdn.blog.st-hatena.com/images/theme/og-image-1500.png" type="image/png" length="0" />
+        </item>
+
+
+
+
+        <item>
+          <title>Goでスタックトレースを出力するには</title>
+          <link>https://aboy-perry.hatenablog.com/entry/2022/06/03/131130</link>          <description>&lt;p&gt;スタックトレース周りについて調べたので放流。&lt;/p&gt;
+
+&lt;h2&gt;概要&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Goでエラーを扱う標準パッケージ &lt;a href=&quot;https://pkg.go.dev/errors&quot;&gt;errors&lt;/a&gt; はGo1.18現在スタックトレースに対応していません。Go2では標準パッケージerrorsにスタックトレースがサポートされる予定です(&lt;a href=&quot;https://go.googlesource.com/proposal/+/master/design/29934-error-values.md&quot;&gt;proposal&lt;/a&gt;)。それまでの間、スタックトレースを出力するためには別のパッケージを使う必要があります。&lt;/li&gt;
+&lt;li&gt;その場合の有力な選択肢として &lt;a href=&quot;https://pkg.go.dev/github.com/pkg/errors&quot;&gt;pkg/errors&lt;/a&gt; と &lt;a href=&quot;https://pkg.go.dev/golang.org/x/xerrors&quot;&gt;xerrors&lt;/a&gt; があります。基本このどちらかを使えば良いですが、どちらを使えば良いかは色々な情報があり迷いどころです。これらの特徴を整理して、スタックトレースを扱いたい人が読めばなんとなく何をどう選べばいいかがわかります。&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2&gt;結論&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;フォーマットミスを意識したくない場合はpkg/errors、標準のerrorsパッケージに似たAPIで使いたい場合はxerrorsがおすすめ。&lt;/li&gt;
+&lt;li&gt;errors.New()による生成や、fmt.Errorf()によるラップは、それまでのスタックトレース情報が無くなるためスタックトレースを出力したいなら基本使わない。&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2&gt;スタックトレースを使いたい場合の主な選択肢&lt;/h2&gt;
+
+&lt;p&gt;準標準パッケージであるxerrorsか、pkg/errorsの2つが一般的な模様。いくつか出典を紹介します。&lt;/p&gt;
+
+&lt;p&gt;実用Go言語&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;Go 1.16では標準ライブラリであるerrors.New()やfmt.Errorf()を使ってエラーを生成した場合、スタックトレースを出力する方法はありません。スタックトレースを出力させたい場合pkg/errorsやgolang.org/x/xerrorsといったライブラリを使う必要があります。&lt;/p&gt;
+
+&lt;p&gt;書籍『実用Go言語』p106&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;プログラミング言語Go完全入門&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;スタックトレースを付加する
+- pkg/errors.WithStackすると付加される
+  - pkg/errors.Wrapでも可
+- xerrorsでも付加されるがerrorsでは付加されない（Go 1.13）&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://docs.google.com/presentation/d/1HW3wG8J_Q2536Iu__7HGr_mhurHajC7IOGjCnn3kZmg/mobilepresent?slide=id.g4fa5dcc83a_0_126&quot;&gt;プログラミング言語Go完全入門 7. エラー処理 @tenten&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;Gophers Slack&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;Steve Coffman: So I know that both pkg/errors and x/xerrors have stacktraces, but in the post-Go 1.13 world that didn&#39;t bring that along, is there a package that only provides errors with stacktraces?
+Tim Heckman: I&#39;m not sure I understand the question, because my initial answer are the two packages you identified.
+&lt;a href=&quot;https://gophers.slack.com/archives/C02A8LZKT/p1651512107108839&quot;&gt;Gophers Slackの#newbiesにて&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;h2&gt;どれを使えばいい？&lt;/h2&gt;
+
+&lt;p&gt;プロジェクト内で統一されていればどちらでも良いと思います。ただいくつか論点があります。&lt;/p&gt;
+
+&lt;h3&gt;更新頻度&lt;/h3&gt;
+
+&lt;p&gt;pkg/errorsは、かつてよりメンテナンスモードに移行することがアナウンスされており、2022年5月現在リポジトリはアーカイブされています。&lt;/p&gt;
+
+&lt;p&gt;xerrorsは、エラーのラップに関する機能がGo 1.13で標準パッケージのerrorsやfmt.Errorfに組み込まれたことにより一部機能がdeprecatedになっています。ですが標準パッケージのerrors自体はスタックトレース非対応のままなので、deprecatedな機能も引き続き使うことになります。&lt;/p&gt;
+
+&lt;p&gt;pkg/errorsがアーカイブされているならxerrorsを使った方がいいか？というと、そうではないと思います。エラーハンドリング周りは現在特に機能追加の必要性もなくAPIが安定しているため、両方とも安心して使うことができると思っています。&lt;/p&gt;
+
+&lt;h3&gt;標準パッケージerrorsへの移行コスト&lt;/h3&gt;
+
+&lt;p&gt;Go 2では標準パッケージであるerrorsにスタックトレースがサポートされる予定です。標準パッケージでやりたいことができそうなら、「繋ぎ」として使うものはGo 2におけるerrorsパッケージへ移行しやすい形だと嬉しいです。&lt;/p&gt;
+
+&lt;p&gt;これについては、pkg/errorsがWrap()、WithMessage()、WithStack()、Cause()と割と独自のAPIを提供しているのに対して、xerrorsはerrors同様フォーマットを用いたAPIが基本なのでどちらかといえばxerrorsの方が移行コストが低そうです。ただpkg/errorsもシンプルなAPIなのでそこまで大きな差はないと思います。&lt;/p&gt;
+
+&lt;h3&gt;使いやすさ・運用しやすさ&lt;/h3&gt;
+
+&lt;p&gt;Goはエラーハンドリングをたくさん書くので、使いやすさは大事なポイントです。&lt;/p&gt;
+
+&lt;p&gt;両者の特徴に関しては &lt;a href=&quot;https://itnext.io/golang-error-handling-best-practice-a36f47b0b94c&quot;&gt;Golang Error Handling — Best Practice in 2020&lt;/a&gt; による整理が分かりやすいです。この記事ではpkg/errorsと比較するとxerrorsには次の2つの問題があると言っています。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;基本的な使い方であるフォーマットによるエラーのラップで、フォーマットを間違うとエラーメッセージが変になるし、その間違いがコンパイルエラーにならないので気づきにくい。&lt;/li&gt;
+&lt;li&gt;エラーのnilチェックが必要&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;p&gt;1について、エラーをラップするフォーマットは &lt;code&gt;: %w&lt;/code&gt;であり、コロンを忘れたり &lt;code&gt;foo %w&lt;/code&gt; 、スペースを忘れて &lt;code&gt;foo:%w&lt;/code&gt; と書くと、エラーメッセージに重複が発生します。また、このフォーマットの違いはコンパイルエラーにならないため気づくことが難しく、Linterを自作するなどしないとレビュアーの負担にもなります。&lt;/p&gt;
+
+&lt;p&gt;例えばxerrorsを使った以下のコードを&lt;a href=&quot;https://go.dev/play/p/mu-og6t1qNc&quot;&gt;Go Playground&lt;/a&gt;で動かすと、正常にスタックトレースが出力されます。&lt;/p&gt;
+
+&lt;pre class=&quot;code lang-go&quot; data-lang=&quot;go&quot; data-unlink&gt;&lt;span class=&quot;synStatement&quot;&gt;package&lt;/span&gt; main
+
+&lt;span class=&quot;synStatement&quot;&gt;import&lt;/span&gt; (
+    &lt;span class=&quot;synConstant&quot;&gt;&amp;quot;database/sql&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;synConstant&quot;&gt;&amp;quot;fmt&amp;quot;&lt;/span&gt;
+
+    &lt;span class=&quot;synConstant&quot;&gt;&amp;quot;golang.org/x/xerrors&amp;quot;&lt;/span&gt;
+)
+
+&lt;span class=&quot;synStatement&quot;&gt;func&lt;/span&gt; foo() &lt;span class=&quot;synType&quot;&gt;error&lt;/span&gt; {
+    &lt;span class=&quot;synStatement&quot;&gt;return&lt;/span&gt; xerrors.Errorf(&lt;span class=&quot;synConstant&quot;&gt;&amp;quot;foo failed: %w&amp;quot;&lt;/span&gt;, bar()) &lt;span class=&quot;synComment&quot;&gt;//ココ&lt;/span&gt;
+}
+
+&lt;span class=&quot;synStatement&quot;&gt;func&lt;/span&gt; bar() &lt;span class=&quot;synType&quot;&gt;error&lt;/span&gt; {
+    &lt;span class=&quot;synStatement&quot;&gt;return&lt;/span&gt; xerrors.Errorf(&lt;span class=&quot;synConstant&quot;&gt;&amp;quot;bar failed: %w&amp;quot;&lt;/span&gt;, sql.ErrNoRows)
+}
+
+&lt;span class=&quot;synStatement&quot;&gt;func&lt;/span&gt; main() {
+    fmt.Printf(&lt;span class=&quot;synConstant&quot;&gt;&amp;quot;%+v&lt;/span&gt;&lt;span class=&quot;synSpecial&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;synConstant&quot;&gt;&amp;quot;&lt;/span&gt;, foo())
+}
+
+foo failed:
+    main.foo
+        /tmp/sandbox3601724689/prog.&lt;span class=&quot;synStatement&quot;&gt;go&lt;/span&gt;:&lt;span class=&quot;synConstant&quot;&gt;11&lt;/span&gt;
+  - bar failed:
+    main.bar
+        /tmp/sandbox3601724689/prog.&lt;span class=&quot;synStatement&quot;&gt;go&lt;/span&gt;:&lt;span class=&quot;synConstant&quot;&gt;15&lt;/span&gt;
+  - sql: no rows in result set
+&lt;/pre&gt;
+
+
+&lt;p&gt;このコードで ココ とコメントした箇所のフォーマットを &lt;code&gt;&quot;foo failed: %w&quot;&lt;/code&gt; から &lt;code&gt;&quot;foo failed:%w&quot;&lt;/code&gt; に変更して動かしてみると、以下のようにスタックトレース中のメッセージが変になってしまいます。&lt;/p&gt;
+
+&lt;pre class=&quot;code lang-go&quot; data-lang=&quot;go&quot; data-unlink&gt;foo failed:bar failed: sql: no rows in result set:
+    main.foo
+        /tmp/sandbox2690898140/prog.&lt;span class=&quot;synStatement&quot;&gt;go&lt;/span&gt;:&lt;span class=&quot;synConstant&quot;&gt;11&lt;/span&gt;
+  - bar failed:
+    main.bar
+        /tmp/sandbox2690898140/prog.&lt;span class=&quot;synStatement&quot;&gt;go&lt;/span&gt;:&lt;span class=&quot;synConstant&quot;&gt;15&lt;/span&gt;
+  - sql: no rows in result set
+&lt;/pre&gt;
+
+
+&lt;p&gt;2のエラーのnilチェックが必要について、xerrorsではnilをラップするとエラーを生成しますが、pkg/errorsではnilをラップしようとしてもエラーを生成せずnilを返します。なのでpkg/errorsのほうが場合によってはnilチェックを省略することができます。&lt;/p&gt;
+
+&lt;pre class=&quot;code lang-go&quot; data-lang=&quot;go&quot; data-unlink&gt;&lt;span class=&quot;synComment&quot;&gt;// xerrorsを使ったfoo()はラップしようとしたerrorがnilでも新しいerrorを返す&lt;/span&gt;
+&lt;span class=&quot;synStatement&quot;&gt;func&lt;/span&gt; foo() &lt;span class=&quot;synType&quot;&gt;error&lt;/span&gt; {
+    &lt;span class=&quot;synStatement&quot;&gt;return&lt;/span&gt; xerrors.Errorf(&lt;span class=&quot;synConstant&quot;&gt;&amp;quot;foo failed: %w&amp;quot;&lt;/span&gt;, &lt;span class=&quot;synStatement&quot;&gt;nil&lt;/span&gt;)
+}
+
+foo failed: %!w(&amp;lt;&lt;span class=&quot;synStatement&quot;&gt;nil&lt;/span&gt;&amp;gt;):
+    main.foo
+        /tmp/sandbox1009969294/prog.&lt;span class=&quot;synStatement&quot;&gt;go&lt;/span&gt;:&lt;span class=&quot;synConstant&quot;&gt;10&lt;/span&gt;
+
+&lt;span class=&quot;synComment&quot;&gt;// pkg/errorsを使ったfoo()はラップしようとしたerrorがnilならnilを返す&lt;/span&gt;
+&lt;span class=&quot;synStatement&quot;&gt;func&lt;/span&gt; foo() &lt;span class=&quot;synType&quot;&gt;error&lt;/span&gt; {
+    &lt;span class=&quot;synStatement&quot;&gt;return&lt;/span&gt; errors.WithMessage(&lt;span class=&quot;synStatement&quot;&gt;nil&lt;/span&gt;, &lt;span class=&quot;synConstant&quot;&gt;&amp;quot;foo failed&amp;quot;&lt;/span&gt;)
+}
+
+&amp;lt;&lt;span class=&quot;synStatement&quot;&gt;nil&lt;/span&gt;&amp;gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;これらの違いから、僕は冒頭の結論に至りました。&lt;/p&gt;
+
+&lt;h2&gt;スタックトレースを使いたいなら気を付けること&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;errors.New()でエラーを生成したり、fmt.Errorf()でエラーをラップすると、それまでのスタックトレース情報が無くなります。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;前述したGo Playgroundのコードに出てくるfoo()の中でfmt.Errorf()を使ってラップすると、以下のようにbar()の位置情報が記録されません（&lt;a href=&quot;https://go.dev/play/p/P9urXDg5BIQ&quot;&gt;fmt.Errorf()を使ったサンプルコード&lt;/a&gt;）。&lt;/p&gt;
+
+&lt;pre class=&quot;code lang-go&quot; data-lang=&quot;go&quot; data-unlink&gt;foo failed:bar failed: sql: no rows in result set:
+    main.foo
+        /tmp/sandbox526836328/prog.&lt;span class=&quot;synStatement&quot;&gt;go&lt;/span&gt;:&lt;span class=&quot;synConstant&quot;&gt;11&lt;/span&gt;
+  - bar failed: sql: no rows in result set
+&lt;/pre&gt;
+
+
+&lt;p&gt;また、同様に今度はbar()の中でerrors.New()を使ってエラーを生成した場合のスタックトレースも以下のようにbar()の位置情報が記録されません（&lt;a href=&quot;https://go.dev/play/p/gEDHE3F9DaC&quot;&gt;errors.New()を使ったサンプルコード&lt;/a&gt;）。&lt;/p&gt;
+
+&lt;pre class=&quot;code lang-go&quot; data-lang=&quot;go&quot; data-unlink&gt;foo failed:bar failed:
+    main.foo
+        /tmp/sandbox3786666462/prog.&lt;span class=&quot;synStatement&quot;&gt;go&lt;/span&gt;:&lt;span class=&quot;synConstant&quot;&gt;11&lt;/span&gt;
+  - bar failed
+&lt;/pre&gt;
+
+</description>          <pubDate>Fri, 03 Jun 2022 13:11:30 +0900</pubDate>
+          <guid isPermalink="false">hatenablog://entry/13574176438098537175</guid>
+
+            <category>Go</category>
+
+          <enclosure url="https://cdn.blog.st-hatena.com/images/theme/og-image-1500.png" type="image/png" length="0" />
+        </item>
+
+        <item>
+          <title>『実践システム・シンキング』を読んだ</title>
+          <link>https://aboy-perry.hatenablog.com/entry/2022/06/03/015250</link>          <description>&lt;p&gt;&lt;iframe src=&quot;https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.amazon.co.jp%2Fdp%2FB01GR42320&quot; title=&quot;実践システム・シンキング　論理思考を超える問題解決のスキル (ＫＳ理工学専門書) | 湊宣明 | ビジネス教育 | Kindleストア | Amazon&quot; class=&quot;embed-card embed-webcard&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&quot;&gt;&lt;/iframe&gt;&lt;cite class=&quot;hatena-citation&quot;&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/B01GR42320&quot;&gt;www.amazon.co.jp&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://aboy-perry.hatenablog.com/entry/2022/05/14/165025&quot;&gt;&amp;#x300E;&amp;#x306A;&amp;#x305C;&amp;#x3042;&amp;#x306E;&amp;#x4EBA;&amp;#x306E;&amp;#x89E3;&amp;#x6C7A;&amp;#x7B56;&amp;#x306F;&amp;#x3044;&amp;#x3064;&amp;#x3082;&amp;#x3046;&amp;#x307E;&amp;#x304F;&amp;#x3044;&amp;#x304F;&amp;#x306E;&amp;#x304B;&amp;#xFF1F;&amp;#x300F;&amp;#x3092;&amp;#x8AAD;&amp;#x3093;&amp;#x3060; - &amp;#x3042;&amp;#x307C;&amp;#x307C;&amp;#x30FC;&amp;#x307C;&amp;#x30FB;&amp;#x307C;&amp;#x30FC;&amp;#x307C;&amp;#x307C;&lt;/a&gt; で知ったシステム思考について何冊か読んでみたかったので購入。&lt;/p&gt;
+
+&lt;p&gt;Kindleのメモ機能とか対応してなかったので残念。内容は1,2,3章がシステム思考の基礎やプロセスの説明が詳細に書かれていて、ベースは『なぜあの人の解決策はいつもうまくいくのか？』による説明と同じですんなり入ってきました。&lt;/p&gt;
+
+&lt;p&gt;逆に違うところは、システム思考のプロセスがより詳細で実践的な説明になっています。時間軸分析から始まるのは同じですが、その後「レファレンスモード」「ステークホルダー分析」「変数抽出」と順を追って因果ループ図をつくるための準備が分かるようになってました。因果分析のところも、文章を変数に変換するところなど実践的なプラクティスが多かったです。&lt;/p&gt;
+
+&lt;p&gt;4章が架空のケースを追体験する章になっていて、ここが本書で説明されたシステム思考プロセスの復習にもなり一番面白かったです。&lt;/p&gt;
+
+&lt;p&gt;5章で定量化に触れられて、ツールの話も入ってきます。僕はループ図書くときに最近は &lt;a href=&quot;https://www.mindmeister.com/&quot;&gt;Mindmeister&lt;/a&gt; を使っています。個人的にKumuより使いやすくてお気に入り。&lt;/p&gt;
+</description>          <pubDate>Fri, 03 Jun 2022 01:52:50 +0900</pubDate>
+          <guid isPermalink="false">hatenablog://entry/13574176438098426705</guid>
+
+            <category>読書ログ</category>
+
+          <enclosure url="https://m.media-amazon.com/images/I/41t4cuxbEIL.jpg" type="image/jpeg" length="0" />
+        </item>
+
+
+
+
+        <item>
+          <title>『問いかけの作法』を読んだ</title>
+          <link>https://aboy-perry.hatenablog.com/entry/2022/05/28/164111</link>          <description>&lt;p&gt;&lt;iframe src=&quot;https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.amazon.co.jp%2Fdp%2FB09LH1NKGV&quot; title=&quot;問いかけの作法 チームの魅力と才能を引き出す技術【DL特典付き（未収録原稿）】 | 安斎勇樹 | 組織論 | Kindleストア | Amazon&quot; class=&quot;embed-card embed-webcard&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&quot;&gt;&lt;/iframe&gt;&lt;cite class=&quot;hatena-citation&quot;&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/B09LH1NKGV&quot;&gt;www.amazon.co.jp&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;一人では出せない成果を出すために集合知（集団脳）を活用するうえで「問い」というのが大事そうだ、というのはいくつか本を読んだりしてわかったのですが、本書はその問いを現場で実践する際のプラクティスがたくさん書いてありました。問いの「組み立て」だけではなく、その前後の「見立て」「投げかけ」も含めた「問いかけ」という行為に関する実践的な本です。&lt;/p&gt;
+
+&lt;p&gt;実践的な本なので、実際にチームのミーティングで色々試してみています。例えば「パラフレイズ」でチームの中で定義が曖昧になっていそうな言葉にユサブリをかけたり、質問の組み立てで主語を「私たち一人一人」にして方向性を調整したり。いずれにしてもチームのポテンシャルを引き出すためにはどうしたらいいか？を考えチャレンジするのは楽しいもんです。&lt;/p&gt;
+
+&lt;p&gt;「問い」だけ大事にしようと思うと、アフターフォローとしてのこの辺りがおざなりになってしまうだろうと、読んでいてハッとしました。&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;しかし忘れてはならないことは、質問に答えてくれた相手の反応に、ポジティブなフィードバックを返すことです。&lt;/p&gt;
+
+&lt;p&gt;（中略）&lt;/p&gt;
+
+&lt;p&gt;また、ミーティングの流れのなかでは、深い価値観に迫るような質問など、相手にとって「答えにくい質問」を投げかけざるを得ない場面もあります。そのようなときには、以下の例のように、質問に向き合ってくれたことに対するポジティブフィードバックがとても重要です。&lt;/p&gt;
+
+&lt;p&gt;（中略）&lt;/p&gt;
+
+&lt;p&gt;質問に対して「良い答え」が得られたときにだけ、質問の内容に対してポジティブなフィードバックをしていると、無自覚なうちにチームはだんだんと「正解」を探すようになり、ファクトリー型のチームに後戻りしてしまいます。 p354&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;問いかけるのは、正解を引き出すためでもなく、相手を試すためでもなく、相手の個性を引き出してチーム全体の集合知を高めるためだと改めて意識したいですね。&lt;/p&gt;
+</description>          <pubDate>Sat, 28 May 2022 16:41:11 +0900</pubDate>
+          <guid isPermalink="false">hatenablog://entry/13574176438096648302</guid>
+
+            <category>読書ログ</category>
+
+          <enclosure url="https://m.media-amazon.com/images/I/51G+uYN-uyL.jpg" type="image/jpeg" length="0" />
+        </item>
+
+
+
+
+        <item>
+          <title>『テスト駆動開発』を読んだ</title>
+          <link>https://aboy-perry.hatenablog.com/entry/2022/05/22/164101</link>          <description>&lt;p&gt;&lt;iframe src=&quot;https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.amazon.co.jp%2Fdp%2FB077D2L69C&quot; title=&quot;テスト駆動開発 | ＫｅｎｔＢｅｃｋ, 和田卓人 | 工学 | Kindleストア | Amazon&quot; class=&quot;embed-card embed-webcard&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&quot;&gt;&lt;/iframe&gt;&lt;cite class=&quot;hatena-citation&quot;&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/B077D2L69C&quot;&gt;www.amazon.co.jp&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;同僚が楽しそうに本書を紹介してくれたので読みました。&lt;/p&gt;
+
+&lt;p&gt;3部構成になっていて、第1部は多国通貨、第2部はテスティングフレームワークであるxUnitを題材にTDDのプロセスを体験します。こういう本を読む場合、題材が自分の知識外の知識を必要とするものだと結構読むの大変だったりするんですが、本書の題材はそこまで難解じゃないので、TDDのプロセスに集中することができました。&lt;/p&gt;
+
+&lt;p&gt;ひとつ意外だったというか、安心できたのは第1部の最後に出てくる以下の記述。&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;そもそも多国通貨のコードは書き終わったと言えるのだろうか。答えはノーだ。
+（中略）&lt;br&gt;
+私は「完了」という言葉を信じていない。完璧さを求めるための手法としてTDDを使うこともできるが、そこはTDDが最も活躍する場所ではない。大きなシステムに関わっている場合、毎日触るような部分は日々鍛えられ、変更も自信も持って行える。システムの周辺部分の、あまり変更しない箇所では、テスト抜けは多いし設計も適当になるが、それでも自信の程度は変わらない。 p250&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;ここを読んだときに、ぼくの大好きな漫画『BLEACH』に出てくる科学者涅マユリの名言を思い出しました。&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;完璧であれば、それ以上は無い。&lt;br&gt;
+そこに創造の余地は無く、それは知恵も才能も立ち入る&lt;br&gt;
+隙がないと言う事だ。&lt;br&gt;
+我々科学者にとって、完璧とは絶望だよ。&lt;br&gt;
+（中略）&lt;br&gt;
+今まで存在した何物よりも素晴しくあれ、&lt;br&gt;
+だが、決して完璧であるなかれ。&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;あと勇気を貰えるのはTDDは「&quot;自分ひとり&quot;でできる&quot;技術&quot;だ」というメッセージですね。&lt;/p&gt;
+
+&lt;p&gt;付録CではTDDの歴史を紐解きながら現在の解釈まで書かれていて、本編顔負けの発見に富んだ付録だったと思います。ソフトウェアテストにおけるTDDのカバー範囲を「アジャイルテストの4象限」で説明されていたり、単にテストを先に書く書き方という誤解とか。&lt;/p&gt;
+</description>          <pubDate>Sun, 22 May 2022 16:41:01 +0900</pubDate>
+          <guid isPermalink="false">hatenablog://entry/13574176438094445944</guid>
+
+            <category>読書ログ</category>
+
+          <enclosure url="https://m.media-amazon.com/images/I/51qh3suMX0L.jpg" type="image/jpeg" length="0" />
+        </item>
+
+
+
+
+        <item>
+          <title>『システム運用アンチパターン』を読んだ</title>
+          <link>https://aboy-perry.hatenablog.com/entry/2022/05/21/155343</link>          <description>&lt;p&gt;&lt;iframe src=&quot;https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.amazon.co.jp%2Fdp%2F4873119847&quot; title=&quot;Amazon - システム運用アンチパターン ―エンジニアがDevOpsで解決する組織・自動化・コミュニケーション | Jeffery D. Smith, 田中 裕一 |本 | 通販&quot; class=&quot;embed-card embed-webcard&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&quot;&gt;&lt;/iframe&gt;&lt;cite class=&quot;hatena-citation&quot;&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/4873119847&quot;&gt;www.amazon.co.jp&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;◯◯アンチパターン本としては『SQLアンチパターン』が思い浮かぶのですが、「システム運用」って結構広いので何が書かれているかわくわくしながら読みました。&lt;/p&gt;
+
+&lt;p&gt;広いだけあって、章ごとに結構毛色が変わっていて且つ基本的に独立してるので、1日2章読むみたいに決めて読んでいきました。章ごとに面白くてあっと言う間に読み終わった章、興味が薄いのでサーっと読み進めた章、活かせそうな考え方が多くてメモを取りながらじっくり読んだ章と様々でした。&lt;/p&gt;
+
+&lt;p&gt;3章「盲目状態での運用」では、運用の可視化をするうえでプロダクトを理解していないと価値のないメトリクスが集まったダッシュボードができあがったり、文脈のないログが溢れたりするアンチパターンを知ったり。&lt;/p&gt;
+
+&lt;p&gt;7章「空の道具箱」では、自動化の取り組みを行う際の主な領域として待ち時間・実行時間・実行頻度・実行のばらつき、の4つが紹介されていました。自分の業務の中から手動でやっている作業を棚卸しして、この4つの観点で考えてみるのは面白そうです。普段漠然と行っていた手動作業に一定の評価観点が追加され、「今自動化し(て)ない理由」が本当に合理的かどうかの判断を助け、自動化を進められる気がします。また、ケネビンフレームワークなどを活用してタスクの複雑さを分類して理解するといったアプローチが紹介されていて、実際に自動化は進めたいがどう優先度を付けていいか分からないとか、タスクの安全性をどの程度担保したらいいか不安だ、といった際に活用できそうです。&lt;/p&gt;
+
+&lt;p&gt;10章「情報のため込み：ブレントだけが知っている」では、「意図せず」情報を溜め込んでいる人が組織によって形成されること、ドキュメントを大切に思ってはいるが大切にしていないこと、など耳が痛い話が続きます。ゲートキーパーは聞けば教えてくれるので、良心があり、その行動を評価しがちですが、「その情報を手に入れるために、あなたのチームが提供できるほかの方法はありますか？」と問いを立ててみると前に進めそうです。&lt;/p&gt;
+
+&lt;p&gt;11章「命じられた文化」では文化チーフという概念が登場します。&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;文化チーフとは、組織の文化的価値観を体現する社員のことです。組織の中での階層にかかわらず、会社の中で影響力のある人物とみなされます。チームやグループの感情面でのリーダーとみなされることもあります。 p272&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;なんだかすごそうな人に見えますが、この観点から組織を見たり自分を見たりするのは良い内省のきっかけになると思います。12章「多すぎる尺度」では優先順位の文脈から目標設定や目標達成のための話も出てくるため、例えば自分の過去半年を振り返って「チームの目標達成を至上命題とする文化チーフとして振る舞えていただろうか」と考えたりするのは効果的でしょう。自分はマネージャーではないですが、マネージャーでなくともチームに関わる話として読み進めると発見があります。&lt;/p&gt;
+
+&lt;p&gt;というわけで、章ごとにテーマがほぼ独立していて全体をまとめるのが難しい本ですが、DevOpsの観点から組織や自分の仕事を見つめ直すきっかけに溢れた本だと思いました。&lt;/p&gt;
+</description>          <pubDate>Sat, 21 May 2022 15:53:43 +0900</pubDate>
+          <guid isPermalink="false">hatenablog://entry/13574176438093973840</guid>
+
+            <category>読書ログ</category>
+
+          <enclosure url="https://images-na.ssl-images-amazon.com/images/I/41Aa3C05e4L._SX389_BO1,204,203,200_.jpg" type="image/jpeg" length="0" />
+        </item>
+
+
+
+
+        <item>
+          <title>『LEADER’s KPT』を読んだ</title>
+          <link>https://aboy-perry.hatenablog.com/entry/2022/05/18/225505</link>          <description>&lt;p&gt;&lt;iframe src=&quot;https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.amazon.co.jp%2Fdp%2FB07MS7Y8WS&quot; title=&quot;LEADER’s KPT | 天野 勝 | ビジネス・経済 | Kindleストア | Amazon&quot; class=&quot;embed-card embed-webcard&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&quot;&gt;&lt;/iframe&gt;&lt;cite class=&quot;hatena-citation&quot;&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/B07MS7Y8WS&quot;&gt;www.amazon.co.jp&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;KPTとは何か？どうやるか？についての入門的な内容がまとめられていました。&lt;/p&gt;
+
+&lt;p&gt;すでにKPTに慣れ親しんだ自分にとっては目新しい発見こそ少なかったですが、つまらなかったわけでもないです。例えばKeep/Problem/Tryの数や比率を継続的に計測してチームの状態を把握する、みたいな方法は、繰り返し行われることの多いKPTと相性が良く合理的で良いなぁと思いました。&lt;/p&gt;
+
+&lt;p&gt;最近読んでいる本と違って、紹介されている理論の解説が薄かったり、参考文献が(ほとんど)出てこないような本なので、よく言えばすごくライトに読めました。&lt;/p&gt;
+</description>          <pubDate>Wed, 18 May 2022 22:55:05 +0900</pubDate>
+          <guid isPermalink="false">hatenablog://entry/13574176438093612895</guid>
+
+            <category>読書ログ</category>
+
+          <enclosure url="https://m.media-amazon.com/images/I/51IVIw2TeIL.jpg" type="image/jpeg" length="0" />
+        </item>
+
+
+
+
+        <item>
+          <title>Goのリンターstaticcheckのルールを全部読んだからいくつか紹介</title>
+          <link>https://aboy-perry.hatenablog.com/entry/2022/05/15/174350</link>          <description>&lt;p&gt;Goのリンターの1つであるstaticcheckのルールを全部読みました。&lt;/p&gt;
+
+&lt;p&gt;&lt;iframe src=&quot;https://hatenablog-parts.com/embed?url=https%3A%2F%2Fstaticcheck.io%2Fdocs%2Fchecks&quot; title=&quot;Checks&quot; class=&quot;embed-card embed-webcard&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&quot;&gt;&lt;/iframe&gt;&lt;cite class=&quot;hatena-citation&quot;&gt;&lt;a href=&quot;https://staticcheck.io/docs/checks&quot;&gt;staticcheck.io&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;全部書くとただのコピーになってしまうので、その中からかいつまんでいくつか紹介します。&lt;/p&gt;
+
+&lt;h2&gt;SA1 – Various misuses of the standard library&lt;/h2&gt;
+
+&lt;h3&gt;SA1004 - Suspiciously small untyped constant in time.Sleep&lt;/h3&gt;
+
+&lt;p&gt;time.Sleep関数に渡されたtime.Durationは&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%A5%CA%A5%CE%C9%C3&quot;&gt;ナノ秒&lt;/a&gt;単位なので、あまりにも小さい値の場合はバグの原因として注意してくれるようです。他の言語だとこういう&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/API&quot;&gt;API&lt;/a&gt;の場合ミリ秒とかだったりしますからね。意図的に小さい値を使いたい場合はtime.NanosecondeをかければOK。&lt;/p&gt;
+
+&lt;pre class=&quot;code lang-go&quot; data-lang=&quot;go&quot; data-unlink&gt;time.Sleep(&lt;span class=&quot;synConstant&quot;&gt;1&lt;/span&gt;) &lt;span class=&quot;synComment&quot;&gt;// NG&lt;/span&gt;
+&lt;span class=&quot;synComment&quot;&gt;// main.go:19:13: sleeping for 1 nanoseconds is probably a bug; be explicit if it isn&#39;t (SA1004)&lt;/span&gt;
+
+time.Sleep(&lt;span class=&quot;synConstant&quot;&gt;1&lt;/span&gt; * time.Nanosecond) &lt;span class=&quot;synComment&quot;&gt;// OK&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;h3&gt;SA1005 - Invalid first argument to exec.Command&lt;/h3&gt;
+
+&lt;p&gt;exec.Command関数の第一引数がシェルコマンドだったらその次の引数がプログラム名やパスじゃないと注意してくれる。ほぇ〜。ただ第二引数以降に入ってる場合は注意なし。&lt;/p&gt;
+
+&lt;pre class=&quot;code lang-go&quot; data-lang=&quot;go&quot; data-unlink&gt;exec.Command(&lt;span class=&quot;synConstant&quot;&gt;&amp;quot;ls arg1&amp;quot;&lt;/span&gt;) &lt;span class=&quot;synComment&quot;&gt;// NG&lt;/span&gt;
+&lt;span class=&quot;synComment&quot;&gt;// main.go:8:15: first argument to exec.Command looks like a shell command, but a program name or path are expected (SA1005)&lt;/span&gt;
+
+exec.Command(&lt;span class=&quot;synConstant&quot;&gt;&amp;quot;ls ./&amp;quot;&lt;/span&gt;) &lt;span class=&quot;synComment&quot;&gt;// OK&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;h3&gt;SA1006 - Printf with dynamic first argument and no further arguments&lt;/h3&gt;
+
+&lt;p&gt;ユーザー入力などの動的な文字列をフォーマットとしてfmt.Printf関数に渡すのを注意してくれる。この例だと別のルール（SA5009）にも引っ掛かりますね。&lt;/p&gt;
+
+&lt;pre class=&quot;code lang-go&quot; data-lang=&quot;go&quot; data-unlink&gt;s := &lt;span class=&quot;synConstant&quot;&gt;&amp;quot;Interest rate: 5%&amp;quot;&lt;/span&gt;
+fmt.Printf(s) &lt;span class=&quot;synComment&quot;&gt;// NG&lt;/span&gt;
+&lt;span class=&quot;synComment&quot;&gt;// main.go:9:2: printf-style function with dynamic format string and no further arguments should use print-style function instead (SA1006)&lt;/span&gt;
+&lt;span class=&quot;synComment&quot;&gt;// main.go:9:13: couldn&#39;t parse format string (SA5009)&lt;/span&gt;
+
+fmt.Printf(&lt;span class=&quot;synConstant&quot;&gt;&amp;quot;%s&amp;quot;&lt;/span&gt;, s) &lt;span class=&quot;synComment&quot;&gt;// OK&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;h3&gt;SA1008 - Non-&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/canonical&quot;&gt;canonical&lt;/a&gt; key in http.Header map&lt;/h3&gt;
+
+&lt;p&gt;http.Headerのキーは大文字始まりで正規化されていて、http.Header.Addのような用意されている関数経由ならそうなるが、mapに直接追加するなどするとそうならないので注意してくれる...って書いてあるけど手元で試してみたところ引っかからなかった。&lt;/p&gt;
+
+&lt;p&gt;追加時ではなく参照するコードに対してチェックしているようだった。&lt;/p&gt;
+
+&lt;pre class=&quot;code lang-go&quot; data-lang=&quot;go&quot; data-unlink&gt;h := http.Header{}
+h[&lt;span class=&quot;synConstant&quot;&gt;&amp;quot;etag&amp;quot;&lt;/span&gt;] = []&lt;span class=&quot;synType&quot;&gt;string&lt;/span&gt;{&lt;span class=&quot;synConstant&quot;&gt;&amp;quot;1234&amp;quot;&lt;/span&gt;} &lt;span class=&quot;synComment&quot;&gt;// staticcheckでは怒られない&lt;/span&gt;
+h.Add(&lt;span class=&quot;synConstant&quot;&gt;&amp;quot;etag&amp;quot;&lt;/span&gt;, &lt;span class=&quot;synConstant&quot;&gt;&amp;quot;5678&amp;quot;&lt;/span&gt;)
+&lt;span class=&quot;synComment&quot;&gt;// map[Etag:[5678] etag:[1234]]&lt;/span&gt;
+
+_ = h[&lt;span class=&quot;synConstant&quot;&gt;&amp;quot;etag&amp;quot;&lt;/span&gt;] &lt;span class=&quot;synComment&quot;&gt;// NG&lt;/span&gt;
+&lt;span class=&quot;synComment&quot;&gt;// main.go:12:6: keys in http.Header are canonicalized, &amp;quot;etag&amp;quot; is not canonical; fix the constant or use http.CanonicalHeaderKey (SA1008)&lt;/span&gt;
+
+_ = http.CanonicalHeaderKey(&lt;span class=&quot;synConstant&quot;&gt;&amp;quot;etag&amp;quot;&lt;/span&gt;) &lt;span class=&quot;synComment&quot;&gt;// OK -&amp;gt; &amp;quot;Etag&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;h3&gt;SA1019 - Using a deprecated function, variable, constant or field&lt;/h3&gt;
+
+&lt;p&gt;deprecatedになった&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/API&quot;&gt;API&lt;/a&gt;の利用を注意してくれる。すごくありがたいけどどうやって検知してるんだろう？と思ってtestdataコードを読むと各バージョンごとにルールを作ってるみたいでした。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/dominikh/go-tools/blob/master/staticcheck/testdata/src/CheckDeprecated_go119/CheckDeprecated.go&quot;&gt;https://github.com/dominikh/go-tools/blob/master/staticcheck/testdata/src/CheckDeprecated_go119/CheckDeprecated.go&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;SA1024 - A string cutset contains duplicate characters&lt;/h3&gt;
+
+&lt;p&gt;strings.TrimLeftとstrings.TrimPrefixの違いが分かる。strings.TrimLeftやTrimRightは第二引数に取り除きたい文字のセットを渡すので、重複がいらない。&lt;/p&gt;
+
+&lt;pre class=&quot;code lang-go&quot; data-lang=&quot;go&quot; data-unlink&gt;fmt.Println(strings.TrimLeft(&lt;span class=&quot;synConstant&quot;&gt;&amp;quot;42133word&amp;quot;&lt;/span&gt;, &lt;span class=&quot;synConstant&quot;&gt;&amp;quot;12334&amp;quot;&lt;/span&gt;)) &lt;span class=&quot;synComment&quot;&gt;// NG&lt;/span&gt;
+&lt;span class=&quot;synComment&quot;&gt;// word&lt;/span&gt;
+&lt;span class=&quot;synComment&quot;&gt;// main.go:10:44: cutset contains duplicate characters (SA1024)&lt;/span&gt;
+
+fmt.Println(strings.TrimLeft(&lt;span class=&quot;synConstant&quot;&gt;&amp;quot;42133word&amp;quot;&lt;/span&gt;, &lt;span class=&quot;synConstant&quot;&gt;&amp;quot;1234&amp;quot;&lt;/span&gt;)) &lt;span class=&quot;synComment&quot;&gt;// OK&lt;/span&gt;
+&lt;span class=&quot;synComment&quot;&gt;// word&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;h3&gt;SA1028 - sort.Slice can only be used on slices&lt;/h3&gt;
+
+&lt;p&gt;sort.Slice関数の第一引数xはanyなんですが、GoDocにもあるとおりスライスじゃないとpanicしてしまう。こういうのを注意してくれるのは助かりますね。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://pkg.go.dev/sort#Slice&quot;&gt;https://pkg.go.dev/sort#Slice&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;SA2 – Concurrency issues&lt;/h2&gt;
+
+&lt;h3&gt;SA2001 - Empty critical section, did you mean to defer the unlock?&lt;/h3&gt;
+
+&lt;p&gt;Lock直後に書かれたUnlockにdeferが付いてなければ注意してくれる。ただそれが有用な場合もあるとのことで、追々理解したい。&lt;/p&gt;
+
+&lt;h2&gt;SA4 – Code that isn&#39;t really doing anything&lt;/h2&gt;
+
+&lt;pre class=&quot;code&quot; data-lang=&quot;&quot; data-unlink&gt;＿人人人人人人人人人人人人＿
+＞　何もしていないコード　＜
+￣Y^Y^Y^Y^Y^Y^Y^Y^Y^Y^￣&lt;/pre&gt;
+
+
+&lt;p&gt;SA4系のルールは全てありがたいと思いました。&lt;/p&gt;
+
+&lt;h3&gt;SA4023 - Impossible comparison of interface &lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/value&quot;&gt;value&lt;/a&gt; with untyped &lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/nil&quot;&gt;nil&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;ほぇぇとなったやつ。インタフェース変数に&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/nil&quot;&gt;nil&lt;/a&gt;値を格納するとインタフェース変数は&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/nil&quot;&gt;nil&lt;/a&gt;ではない。ここもうちょっとちゃんと理解したい。&lt;/p&gt;
+
+&lt;pre class=&quot;code lang-go&quot; data-lang=&quot;go&quot; data-unlink&gt;&lt;span class=&quot;synStatement&quot;&gt;type&lt;/span&gt; MyInterface &lt;span class=&quot;synStatement&quot;&gt;interface&lt;/span&gt;{}
+
+&lt;span class=&quot;synStatement&quot;&gt;func&lt;/span&gt; nilOrNotNil() any {
+    &lt;span class=&quot;synStatement&quot;&gt;var&lt;/span&gt; p *MyInterface = &lt;span class=&quot;synStatement&quot;&gt;nil&lt;/span&gt;
+    &lt;span class=&quot;synStatement&quot;&gt;return&lt;/span&gt; p
+}
+
+&lt;span class=&quot;synStatement&quot;&gt;func&lt;/span&gt; main() {
+    &lt;span class=&quot;synStatement&quot;&gt;if&lt;/span&gt; nilOrNotNil() != &lt;span class=&quot;synStatement&quot;&gt;nil&lt;/span&gt; {
+        fmt.Println(&lt;span class=&quot;synConstant&quot;&gt;&amp;quot;not nil&amp;quot;&lt;/span&gt;) &lt;span class=&quot;synComment&quot;&gt;// reached&lt;/span&gt;
+    }
+}
+&lt;span class=&quot;synComment&quot;&gt;// main.go:13:5: this comparison is always true (SA4023)&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;h2&gt;SA5 – Correctness issues&lt;/h2&gt;
+
+&lt;h3&gt;SA5003 - Defers in infinite loops will never execute&lt;/h3&gt;
+
+&lt;p&gt;deferはその関数がスコープなので、無限ループの中では絶対に実行されない。&lt;/p&gt;
+
+&lt;h3&gt;SA5011 - Possible &lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/nil&quot;&gt;nil&lt;/a&gt; pointer dereference&lt;/h3&gt;
+
+&lt;p&gt;ポインタが&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%A5%C7%A5%EA%A5%D5%A5%A1%A5%EC%A5%F3%A5%B9&quot;&gt;デリファレンス&lt;/a&gt;される際に&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/nil&quot;&gt;nil&lt;/a&gt;の可能性があるコードを注意してくれる。&lt;/p&gt;
+
+&lt;h2&gt;SA6 – Performance issues&lt;/h2&gt;
+
+&lt;h3&gt;SA6005 - Inefficient string comparison with strings.ToLower or strings.ToUpper&lt;/h3&gt;
+
+&lt;p&gt;strings.EqualFold関数は文字の大文字小文字を区別せず&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/Unicode&quot;&gt;Unicode&lt;/a&gt;標準のCase Foldingという操作で比較を行うためstrings.ToLowerやToUpperを行ってから比較するより速い。実際に以下のようなコードで測ってみると速度的にメモリ的にも優れていますね。&lt;/p&gt;
+
+&lt;pre class=&quot;code lang-go&quot; data-lang=&quot;go&quot; data-unlink&gt;&lt;span class=&quot;synStatement&quot;&gt;var&lt;/span&gt; s1 = &lt;span class=&quot;synConstant&quot;&gt;&amp;quot;HoGe&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;synStatement&quot;&gt;var&lt;/span&gt; s2 = &lt;span class=&quot;synConstant&quot;&gt;&amp;quot;hOgE&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;synStatement&quot;&gt;func&lt;/span&gt; Benchmark_ToLower(b *testing.B) {
+    &lt;span class=&quot;synStatement&quot;&gt;for&lt;/span&gt; i := &lt;span class=&quot;synConstant&quot;&gt;0&lt;/span&gt;; i &amp;lt; b.N; i++ {
+        strings.ToLower(s1)
+        strings.ToLower(s2)
+    }
+}
+
+&lt;span class=&quot;synStatement&quot;&gt;func&lt;/span&gt; Benchmark_CaseFolding(b *testing.B) {
+    &lt;span class=&quot;synStatement&quot;&gt;for&lt;/span&gt; i := &lt;span class=&quot;synConstant&quot;&gt;0&lt;/span&gt;; i &amp;lt; b.N; i++ {
+        strings.EqualFold(s1, s2)
+    }
+}
+&lt;/pre&gt;
+
+
+
+
+&lt;pre class=&quot;code&quot; data-lang=&quot;&quot; data-unlink&gt;% go test -bench . -benchmem
+goos: darwin
+goarch: arm64
+pkg: sample
+Benchmark_ToLower-8             31507820                37.83 ns/op            8 B/op          2 allocs/op
+Benchmark_CaseFolding-8         124359349                9.807 ns/op           0 B/op          0 allocs/op
+PASS
+ok      sample  4.479s&lt;/pre&gt;
+
+
+&lt;h2&gt;SA9 – Dubious code constructs that have a high probability of being wrong&lt;/h2&gt;
+
+&lt;p&gt;「間違っている可能性のある」コードを教えてくれる。ただし他のルールに比べてこれは&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%B5%B6%CD%DB%C0%AD&quot;&gt;偽陽性&lt;/a&gt;の可能性があるとのこと。&lt;/p&gt;
+
+&lt;h3&gt;SA9005 - Trying to marshal a struct with no public fields nor custom marshaling&lt;/h3&gt;
+
+&lt;p&gt;非公開のフィールドに対してencoding/&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/json&quot;&gt;json&lt;/a&gt;などによるmarshal、unmarshalは効かないのでそれを検知してくれる。これはgo vetでも同様のチェックを行ってくれますよね。&lt;/p&gt;
+
+&lt;h2&gt;S1 – Code simplifications&lt;/h2&gt;
+
+&lt;h3&gt;S1012 - Replace time.Now().Sub(x) with time.Since(x)&lt;/h3&gt;
+
+&lt;p&gt;time.Now().Sub(x)よりもtime.Since(x)。このルールに限らず標準パッケージの使い方によってよりシンプルに書ける方法が見つかるので読んでいて楽しい。&lt;/p&gt;
+
+&lt;h3&gt;S1025 - Don’t use fmt.Sprintf(&quot;%s&quot;, x) unnecessarily&lt;/h3&gt;
+
+&lt;p&gt;fmt.Sprintfを使う必要がない場合を検知してくれる。これ結構嬉しいかも、その変数がStringerインタフェースを実装してるのかどうかを毎回完璧に把握するの大変だと思うし。&lt;/p&gt;
+
+&lt;h2&gt;ST1 – Stylistic issues&lt;/h2&gt;
+
+&lt;p&gt;ここからデフォルトでは無効化されているルールが登場しますが、見た感じ全て有効化して問題ない気がしました。&lt;/p&gt;
+
+&lt;h3&gt;ST1000 - Incorrect or missing package comment (non-default)&lt;/h3&gt;
+
+&lt;p&gt;デフォルトでは無効化されているルール。パッケージコメントをCodeReviewCommentsに記載されているルールで縛るかどうか。&lt;/p&gt;
+
+&lt;p&gt;&lt;iframe src=&quot;https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgithub.com%2Fgolang%2Fgo%2Fwiki%2FCodeReviewComments%23package-comments&quot; title=&quot;CodeReviewComments · golang/go Wiki&quot; class=&quot;embed-card embed-webcard&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&quot;&gt;&lt;/iframe&gt;&lt;cite class=&quot;hatena-citation&quot;&gt;&lt;a href=&quot;https://github.com/golang/go/wiki/CodeReviewComments#package-comments&quot;&gt;github.com&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;h3&gt;ST1003 - Poorly chosen identifier (non-default)&lt;/h3&gt;
+
+&lt;p&gt;デフォルトでは無効化されているルール。変数名やパッケージ名を、Effective GoやCodeReviewCommentsに記載されているルールで縛るかどうか。&lt;/p&gt;
+
+&lt;p&gt;これは有効化してもいいんじゃないですかね、mixed-capsとかinitialismsとかが他のリンターで検知できるなら別ですけど。基本この辺りの細かい書き方はEffective GoやCodeReviewCommentsに従って書く人による違いをできるだけなく無くした方が「読みやすい」コードになると思うです。&lt;/p&gt;
+
+&lt;h2&gt;QF1 – Quickfixes&lt;/h2&gt;
+
+&lt;p&gt;自動で直されるやつ。&lt;/p&gt;
+
+&lt;h3&gt;QF1012 - Use fmt.Fprintf(x, ...) instead of x.Write(fmt.Sprintf(...))&lt;/h3&gt;
+
+&lt;p&gt;こういうのは知らないと気づかないだろうしリンターにチェックしてもらえるなら学習になると思うです。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;というわけで全ルールを読んで、その中からかいつまんで紹介しました。知らなかった標準パッケージの&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/API&quot;&gt;API&lt;/a&gt;を知れたり、Goの仕様を知れたり、Goに限らず「こう書いた方がシンプルだよね」って書き方を再確認したりできました。Go初学者は目を通してみると良いんじゃないでしょうか 👍&lt;/p&gt;
+</description>          <pubDate>Sun, 15 May 2022 17:43:50 +0900</pubDate>
+          <guid isPermalink="false">hatenablog://entry/13574176438092603858</guid>
+
+            <category>Go</category>
+
+          <enclosure url="https://cdn.blog.st-hatena.com/images/theme/og-image-1500.png" type="image/png" length="0" />
+        </item>
+
+
+
+
+        <item>
+          <title>『なぜあの人の解決策はいつもうまくいくのか？』を読んだ</title>
+          <link>https://aboy-perry.hatenablog.com/entry/2022/05/14/165025</link>          <description>&lt;p&gt;&lt;iframe src=&quot;https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.amazon.co.jp%2Fdp%2FB00ENSKOQK&quot; title=&quot;なぜあの人の解決策はいつもうまくいくのか？―小さな力で大きく動かす！システム思考の上手な使い方 | 枝廣 淳子, 小田 理一郎 | ビジネス・経済 | Kindleストア | Amazon&quot; class=&quot;embed-card embed-webcard&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&quot;&gt;&lt;/iframe&gt;&lt;cite class=&quot;hatena-citation&quot;&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/B00ENSKOQK&quot;&gt;www.amazon.co.jp&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;ラノベみたいなタイトル。システム思考についての本をはじめて読んだのですが、いいですねこれ。&lt;/p&gt;
+
+&lt;p&gt;システム思考 is 問題をパターンとして捉えて、パターンを生み出している構造を理解して、構造に働きかけることで問題解決をしていくこと。&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;私たちは問題があると、すぐに問題解決をしようとし、問題の近くに解決策を探します。この例でいえば「うまくいっていた好循環がうまくいかなくなった。好循環を元通りに回すことが解決であり、そのためにどうしたらよいか」と考えるのです。ところが、解決策は問題の近くにあるとは限りません。一見、問題からはほど遠いところに効果的な解決策がある場合も多いのです。 p17&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;このあたりは常に気をつけたい。&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;六人の人が一つのルービックキューブに向かって、それぞれ自分の目の前の一面をきれいに合わせようとしている様子を想像してみてください。自分の目の前を合わせようとキューブを動かすと、その動きは他の人の面に影響を与えます。これではいつまでたっても、六つの面がきれいにそろうことはないでしょう。 p39&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;全体は部分の総和ではない。&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;しかし、私たちは「物事を変えたり創り出したりするために必要な時間」を無視して、時期尚早に成果を判断し、せっかくの取組みを「芽が出る前に」摘んでしまうことがよくあります。 p234&lt;/p&gt;
+
+&lt;p&gt;シンプルな問題であれば、図8-9のように、まっすぐに望ましい状態に向かって進捗していくでしょう。しかし、複雑で難しい問題の場合は、図8-10のように「いったん悪化してから、改善する」ことがよくあります。「高く飛びあがるには、深く沈み込む必要がある」ともいえるでしょう。 p234&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;このあたりは時間軸について。&lt;/p&gt;
+
+&lt;p&gt;本書で出てくる交通渋滞の例が結構分かりやすいですね。「なぜ道路を拡張したのに渋滞がひどくなったのか？」「なぜ道路を狭くする、自動車の通過に追加で税金を設ける、バス専用車線を追加する、といった直感に反するような解決策がうまくいくのか？」といったところからシステム思考の理解を深めることができます。&lt;/p&gt;
+
+&lt;p&gt;構造を理解するためのツールであるループ図は、自分自身で問題を理解したり、チームで共通の理解を促したりするのにかなり役立ちそうだなと思います。問題の近くにある変数だけじゃなく、遠くにある変数も含めてどういうループが回っているのか俯瞰して見れるようになると取りうる解決策の幅がかなり広がるだろうなぁ。&lt;/p&gt;
+</description>          <pubDate>Sat, 14 May 2022 16:50:25 +0900</pubDate>
+          <guid isPermalink="false">hatenablog://entry/13574176438092282055</guid>
+
+            <category>読書ログ</category>
+
+          <enclosure url="https://m.media-amazon.com/images/I/41tp10w4HRL.jpg" type="image/jpeg" length="0" />
+        </item>
+
+        <item>
+          <title>httptest.ResponseRecorderを使ったテストでHTTPステータスコードが意図した値にならないとき</title>
+          <link>https://aboy-perry.hatenablog.com/entry/2022/05/14/161051</link>          <description>&lt;p&gt;httptest.ResponseRecorderを使ってHTTPサーバーのテストをしている際、レスポンスのHTTPステータスコードが意図した値にならないなぁと思って色々調べたのでそのメモです。&lt;/p&gt;
+
+&lt;p&gt;例えば以下のようなコードで再現することができます。&lt;/p&gt;
+
+&lt;pre class=&quot;code lang-go&quot; data-lang=&quot;go&quot; data-unlink&gt;&lt;span class=&quot;synStatement&quot;&gt;type&lt;/span&gt; MyHandler &lt;span class=&quot;synStatement&quot;&gt;struct&lt;/span&gt;{}
+
+&lt;span class=&quot;synStatement&quot;&gt;func&lt;/span&gt; (h *MyHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+    w.Write([]&lt;span class=&quot;synType&quot;&gt;byte&lt;/span&gt;(&lt;span class=&quot;synConstant&quot;&gt;&amp;quot;sample&amp;quot;&lt;/span&gt;))
+    w.WriteHeader(http.StatusTeapot)
+}
+
+&lt;span class=&quot;synStatement&quot;&gt;func&lt;/span&gt; main() {
+    log.Fatalln(http.ListenAndServe(&lt;span class=&quot;synConstant&quot;&gt;&amp;quot;:8080&amp;quot;&lt;/span&gt;, &amp;amp;MyHandler{}))
+}
+&lt;/pre&gt;
+
+
+&lt;p&gt;このプログラムを実行してリクエストを送るとsampleという文字列がHTTPステータス200で返ってきます。&lt;/p&gt;
+
+&lt;pre class=&quot;code&quot; data-lang=&quot;&quot; data-unlink&gt;sample % curl -i localhost:8080
+HTTP/1.1 200 OK
+~省略~
+
+sample&lt;/pre&gt;
+
+
+&lt;p&gt;テストコードを簡単に書くとこのようになりますが、こちらも同様です。&lt;/p&gt;
+
+&lt;pre class=&quot;code lang-go&quot; data-lang=&quot;go&quot; data-unlink&gt;&lt;span class=&quot;synStatement&quot;&gt;import&lt;/span&gt; (
+    &lt;span class=&quot;synConstant&quot;&gt;&amp;quot;net/http&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;synConstant&quot;&gt;&amp;quot;net/http/httptest&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;synConstant&quot;&gt;&amp;quot;testing&amp;quot;&lt;/span&gt;
+)
+
+&lt;span class=&quot;synStatement&quot;&gt;func&lt;/span&gt; Test(t *testing.T) {
+    req := httptest.NewRequest(http.MethodGet, &lt;span class=&quot;synConstant&quot;&gt;&amp;quot;/&amp;quot;&lt;/span&gt;, &lt;span class=&quot;synStatement&quot;&gt;nil&lt;/span&gt;)
+    res := httptest.NewRecorder()
+
+    h := &amp;amp;MyHandler{}
+    h.ServeHTTP(res, req)
+
+    &lt;span class=&quot;synStatement&quot;&gt;if&lt;/span&gt; want, got := http.StatusTeapot, res.Code; want != got {
+        t.Errorf(&lt;span class=&quot;synConstant&quot;&gt;&amp;quot;status code should be %d, but got %d&amp;quot;&lt;/span&gt;, want, got)
+    }
+}
+&lt;/pre&gt;
+
+
+
+
+&lt;pre class=&quot;code&quot; data-lang=&quot;&quot; data-unlink&gt;=== RUN   Test
+    main_test.go:18: status code should be 418, but got 200
+--- FAIL: Test (0.00s)
+
+FAIL&lt;/pre&gt;
+
+
+&lt;h2&gt;結論&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;200以外のHTTPステータスコードを設定したいならWriteメソッドの前にWriteHeaderメソッドを呼び出す必要がある&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;この辺りは、net/http.ResponseWriterインタフェースのドキュメントに書いてありますね。
+&lt;iframe src=&quot;https://hatenablog-parts.com/embed?url=https%3A%2F%2Fpkg.go.dev%2Fnet%2Fhttp%23ResponseWriter&quot; title=&quot;http package - net/http - pkg.go.dev&quot; class=&quot;embed-card embed-webcard&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&quot;&gt;&lt;/iframe&gt;&lt;cite class=&quot;hatena-citation&quot;&gt;&lt;a href=&quot;https://pkg.go.dev/net/http#ResponseWriter&quot;&gt;pkg.go.dev&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;pre class=&quot;code lang-go&quot; data-lang=&quot;go&quot; data-unlink&gt;&lt;span class=&quot;synComment&quot;&gt;// WriteHeader sends an HTTP response header with the provided&lt;/span&gt;
+&lt;span class=&quot;synComment&quot;&gt;// status code.&lt;/span&gt;
+&lt;span class=&quot;synComment&quot;&gt;//&lt;/span&gt;
+&lt;span class=&quot;synComment&quot;&gt;// If WriteHeader is not called explicitly, the first call to Write&lt;/span&gt;
+&lt;span class=&quot;synComment&quot;&gt;// will trigger an implicit WriteHeader(http.StatusOK).&lt;/span&gt;
+&lt;span class=&quot;synComment&quot;&gt;// Thus explicit calls to WriteHeader are mainly used to&lt;/span&gt;
+&lt;span class=&quot;synComment&quot;&gt;// send error codes.&lt;/span&gt;
+&lt;span class=&quot;synComment&quot;&gt;//&lt;/span&gt;
+&lt;span class=&quot;synComment&quot;&gt;// The provided code must be a valid HTTP 1xx-5xx status code.&lt;/span&gt;
+&lt;span class=&quot;synComment&quot;&gt;// Only one header may be written. Go does not currently&lt;/span&gt;
+&lt;span class=&quot;synComment&quot;&gt;// support sending user-defined 1xx informational headers,&lt;/span&gt;
+&lt;span class=&quot;synComment&quot;&gt;// with the exception of 100-continue response header that the&lt;/span&gt;
+&lt;span class=&quot;synComment&quot;&gt;// Server sends automatically when the Request.Body is read.&lt;/span&gt;
+WriteHeader(statusCode &lt;span class=&quot;synType&quot;&gt;int&lt;/span&gt;)
+&lt;/pre&gt;
+
+
+&lt;p&gt;以下、結論を補足する形で実際にhttptest.ResponseRecorderの実装を読んでいきます。&lt;/p&gt;
+
+&lt;h2&gt;httptest.ResponseRecorderの実装を読んでいく&lt;/h2&gt;
+
+&lt;p&gt;HTTPサーバーのテストで利用するhttptest.ResponseRecorderの実装を追います。今回は、動機となった&lt;strong&gt;「レスポンスのHTTPステータスコードが意図した値にならない」の理由を知る&lt;/strong&gt;ことを目的に読んでいきます。&lt;/p&gt;
+
+&lt;p&gt;httptest.ResponseRecorderはhttp.ResponseWriterインタフェースを実装した型なので、&lt;code&gt;Header() Header&lt;/code&gt; &lt;code&gt;Write([]byte) (int, error)&lt;/code&gt; &lt;code&gt;WriteHeader(statusCode int)&lt;/code&gt;の3つのメソッドの周辺を調査します。&lt;/p&gt;
+
+&lt;p&gt;まず直接HTTPステータスコードを設定できるWriteHeader()メソッドの実装を眺めます。&lt;/p&gt;
+
+&lt;pre class=&quot;code lang-go&quot; data-lang=&quot;go&quot; data-unlink&gt;&lt;span class=&quot;synStatement&quot;&gt;func&lt;/span&gt; (rw *ResponseRecorder) WriteHeader(code &lt;span class=&quot;synType&quot;&gt;int&lt;/span&gt;) {
+    &lt;span class=&quot;synStatement&quot;&gt;if&lt;/span&gt; rw.wroteHeader {
+        &lt;span class=&quot;synStatement&quot;&gt;return&lt;/span&gt;
+    }
+
+    checkWriteHeaderCode(code)
+    rw.Code = code
+    rw.wroteHeader = &lt;span class=&quot;synStatement&quot;&gt;true&lt;/span&gt;
+    &lt;span class=&quot;synStatement&quot;&gt;if&lt;/span&gt; rw.HeaderMap == &lt;span class=&quot;synStatement&quot;&gt;nil&lt;/span&gt; {
+        rw.HeaderMap = &lt;span class=&quot;synStatement&quot;&gt;make&lt;/span&gt;(http.Header)
+    }
+    rw.snapHeader = rw.HeaderMap.Clone()
+}
+&lt;/pre&gt;
+
+
+&lt;p&gt;早速レシーバーのwroteHeaderフィールドが真ならリターンしていて怪しいです。wroteHeaderフィールドにはGoDocがありませんでしたが、名前の通りですね。では、いつどこでwroteHeaderフィールドが書き換えられているのか。&lt;/p&gt;
+
+&lt;p&gt;wroteHeaderで検索をかけると、参照している箇所がいくつか、値を代入している箇所が1箇所見つかります。値を代入している1箇所がWriteHeaderメソッドの中ですね。&lt;/p&gt;
+
+&lt;p&gt;よって&lt;strong&gt;同一のResponseRecorderインスタンスでは、WriteHeaderメソッドによるHTTPステータスコードの設定は一度のみできる&lt;/strong&gt;ことが分かります。&lt;/p&gt;
+
+&lt;p&gt;次にWriteメソッドがどういう実装になっているかを見ます。&lt;/p&gt;
+
+&lt;pre class=&quot;code lang-go&quot; data-lang=&quot;go&quot; data-unlink&gt;&lt;span class=&quot;synStatement&quot;&gt;func&lt;/span&gt; (rw *ResponseRecorder) Write(buf []&lt;span class=&quot;synType&quot;&gt;byte&lt;/span&gt;) (&lt;span class=&quot;synType&quot;&gt;int&lt;/span&gt;, &lt;span class=&quot;synType&quot;&gt;error&lt;/span&gt;) {
+    rw.writeHeader(buf, &lt;span class=&quot;synConstant&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt;)
+    &lt;span class=&quot;synStatement&quot;&gt;if&lt;/span&gt; rw.Body != &lt;span class=&quot;synStatement&quot;&gt;nil&lt;/span&gt; {
+        rw.Body.Write(buf)
+    }
+    &lt;span class=&quot;synStatement&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;synStatement&quot;&gt;len&lt;/span&gt;(buf), &lt;span class=&quot;synStatement&quot;&gt;nil&lt;/span&gt;
+}
+&lt;/pre&gt;
+
+
+&lt;p&gt;1行目でwriteHeaderという非公開メソッドを呼んでいるので、そいつを見にいきます。&lt;/p&gt;
+
+&lt;pre class=&quot;code lang-go&quot; data-lang=&quot;go&quot; data-unlink&gt;&lt;span class=&quot;synStatement&quot;&gt;func&lt;/span&gt; (rw *ResponseRecorder) writeHeader(b []&lt;span class=&quot;synType&quot;&gt;byte&lt;/span&gt;, str &lt;span class=&quot;synType&quot;&gt;string&lt;/span&gt;) {
+    &lt;span class=&quot;synStatement&quot;&gt;if&lt;/span&gt; rw.wroteHeader {
+        &lt;span class=&quot;synStatement&quot;&gt;return&lt;/span&gt;
+    }
+    &lt;span class=&quot;synStatement&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;synStatement&quot;&gt;len&lt;/span&gt;(str) &amp;gt; &lt;span class=&quot;synConstant&quot;&gt;512&lt;/span&gt; {
+        str = str[:&lt;span class=&quot;synConstant&quot;&gt;512&lt;/span&gt;]
+    }
+
+    m := rw.Header()
+
+    _, hasType := m[&lt;span class=&quot;synConstant&quot;&gt;&amp;quot;Content-Type&amp;quot;&lt;/span&gt;]
+    hasTE := m.Get(&lt;span class=&quot;synConstant&quot;&gt;&amp;quot;Transfer-Encoding&amp;quot;&lt;/span&gt;) != &lt;span class=&quot;synConstant&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;synStatement&quot;&gt;if&lt;/span&gt; !hasType &amp;amp;&amp;amp; !hasTE {
+        &lt;span class=&quot;synStatement&quot;&gt;if&lt;/span&gt; b == &lt;span class=&quot;synStatement&quot;&gt;nil&lt;/span&gt; {
+            b = []&lt;span class=&quot;synType&quot;&gt;byte&lt;/span&gt;(str)
+        }
+        m.Set(&lt;span class=&quot;synConstant&quot;&gt;&amp;quot;Content-Type&amp;quot;&lt;/span&gt;, http.DetectContentType(b))
+    }
+
+    rw.WriteHeader(&lt;span class=&quot;synConstant&quot;&gt;200&lt;/span&gt;)
+}
+&lt;/pre&gt;
+
+
+&lt;p&gt;今回の目的に沿って読むならば、気になる箇所は2箇所あります。まず1行目では、公開メソッドのWriteHeaderと同様にwroteHeaderフィールドがtrueなら何もせずreturnしてますね。そしてメソッドの最後にWriteHeader(200)メソッドを読んでいます。前述した通りWriteHeaderメソッドは内部でwroteHeaderフィールドをtrueにします。よって&lt;strong&gt;Writeメソッドは(Bodyへの書き込み前に)HTTPステータスコードに200を設定する&lt;/strong&gt;ことがわかります。&lt;/p&gt;
+
+&lt;p&gt;ここまで読むと、最初に載せたサンプルコードでなぜHTTPステータスコードが418にならないのか、なぜテストが失敗するのかが理解できます。&lt;/p&gt;
+
+&lt;pre class=&quot;code lang-go&quot; data-lang=&quot;go&quot; data-unlink&gt;&lt;span class=&quot;synStatement&quot;&gt;func&lt;/span&gt; (h *MyHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+    w.Write([]&lt;span class=&quot;synType&quot;&gt;byte&lt;/span&gt;(&lt;span class=&quot;synConstant&quot;&gt;&amp;quot;sample&amp;quot;&lt;/span&gt;)) &lt;span class=&quot;synComment&quot;&gt;// この時点で200が設定され&lt;/span&gt;
+    w.WriteHeader(http.StatusTeapot) &lt;span class=&quot;synComment&quot;&gt;// 上書きはできない&lt;/span&gt;
+}
+&lt;/pre&gt;
+
+
+&lt;p&gt;それから、「同一インスタンスで一度のみ」ということは、例えばTable Driven Testなどでhttptest.ResponseRecorderのインスタンスを使い回しているとHTTPステータスコードが以前の値に固定されてしまうので、サブテスト内で初期化する必要があるということですね。&lt;/p&gt;
+
+&lt;p&gt;ドキュメントや実装を読むことで理解を深めることができました。&lt;/p&gt;
+
+&lt;h2&gt;参考&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://pkg.go.dev/net/http#ResponseWriter&quot;&gt;https://pkg.go.dev/net/http#ResponseWriter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://pkg.go.dev/net/http/httptest#ResponseRecorder&quot;&gt;https://pkg.go.dev/net/http/httptest#ResponseRecorder&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://pod.hatenablog.com/entry/2019/01/26/150921&quot;&gt;net/httpのhandlerを書く時に気をつけたほうが良い順序について - podhmo&#39;s diary&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://qiita.com/roothybrid7/items/34578037d883c9a99ca8&quot;&gt;Golangで、ResponseWriterを使ってHTTPレスポンスを組み立てる際にハマったこと - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/68171765/httptest-responserecorder-keeps-the-old-value&quot;&gt;httptest ResponseRecorder keeps the old value - stack overflow&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>          <pubDate>Sat, 14 May 2022 16:10:51 +0900</pubDate>
+          <guid isPermalink="false">hatenablog://entry/13574176438092232762</guid>
+
+            <category>Go</category>
+
+          <enclosure url="https://cdn.blog.st-hatena.com/images/theme/og-image-1500.png" type="image/png" length="0" />
+        </item>
+
+
+
+
+        <item>
+          <title>『ファシリテーションの教科書 - 組織を活性化させるコミュニケーションとリーダーシップ』を読んだ</title>
+          <link>https://aboy-perry.hatenablog.com/entry/2022/05/10/012206</link>          <description>&lt;p&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/B00P28A5M8&quot;&gt;https://www.amazon.co.jp/dp/B00P28A5M8&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;『多様性の科学』を読んでからというもの、集団で仕事をする -&gt; 集合知を高める(集団脳を構築する)と考えた時に、集合知を高める観点で周りを見渡すとまた色々な領域で学ぶことがあるな〜と思っています。&lt;/p&gt;
+
+&lt;p&gt;会議もそのひとつで、会議は一人ではやらないので、二人以上で集合知を利用してよりよい結論に辿り着くためのイベントなはずです。会議を因数分解していくと「ファシリテーション」があり、そういえばファシリテーションをちゃんと学んだことないな...社会人はみんな新卒1,2年目くらいで学んだりするのかな...ぐぬぬと思ったので本書を手に取りました。&lt;/p&gt;
+
+&lt;p&gt;結果からいうと会議のファシリテーションに限らず、人と話すうえで相手の発言をどう整理するかとか、欠落したあるいは曖昧になっている主張や根拠をどう引き出すかなど、日頃の仕事の考え方が変わるような知見に溢れた本でした。やったね。&lt;/p&gt;
+
+&lt;p&gt;ただ同時にファシリテーション難しすぎじゃね？とも思いました。考えるべきことが多すぎて、ひとりの人間がやることじゃあないなぁと思ったので、理想は会議の参加者全員が本書に書いてあるような、そもそも会議の構成を意識したり、論点整理力だったり、聴く/伝える力を鍛えたりするのが良いのでしょうね。&lt;/p&gt;
+</description>          <pubDate>Tue, 10 May 2022 01:22:06 +0900</pubDate>
+          <guid isPermalink="false">hatenablog://entry/13574176438090927404</guid>
+
+            <category>読書ログ</category>
+
+          <enclosure url="https://m.media-amazon.com/images/I/51yL552HWvL._SY346_.jpg" type="image/jpeg" length="0" />
+        </item>
+
+
+
+
+        <item>
+          <title>『実用Go言語』を読んだ</title>
+          <link>https://aboy-perry.hatenablog.com/entry/2022/05/08/190852</link>          <description>&lt;p&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/4873119693&quot;&gt;https://www.amazon.co.jp/dp/4873119693&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;実務レベルでGoを読み書きする際に考えるであろう様々な「問い」とその回答が体系的にまとまっている超良書でした。ぼくは最近Goを触り始めたペーペーなので、本書を読むと昨日自分が書いたコードを書き直したくなったり、CIの設定を直したくなったり、がいたるところで起こります。&lt;/p&gt;
+
+&lt;p&gt;本書が扱う領域が広いので、自分がまだGoでは経験していないテーマ（章単位でいうと9, 12, 15, 16章あたり）も多くありましたが、説明が分かりやすいため一通り読んで頭の中の引き出しに入れておくことが苦ではありませんでした。今後Goを読み書きするうえで、何度も読み返すような本の一冊です。&lt;/p&gt;
+
+&lt;p&gt;Goで書かれたコード（同僚が書いたコード、標準パッケージ、準標準パッケージ、サードパーティモジュール）が圧倒的に「読みやすく」なり、書く際の選択肢が理由付きで増えるため「書きやすく」なります。&lt;/p&gt;
+
+&lt;p&gt;もうちょい具体的な話でいうと、例えばGoの書き方だけでなくDockerfileのプラクティスにも言及があったり、クラウドストレージやオブザーバビリティの章があったりします。Dockerfileではベースイメージどれ選ぶのがオススメかが書かれていて、その中で「イメージサイズだけ考えてAlpine選ぶと〜」という記述があったりしてこの辺は運用まで含めて実務でGoを使い倒してるからこその現場感のある言及で「実用」みを感じました。&lt;/p&gt;
+
+&lt;p&gt;リフレクションと構造体のタグを理解することで、jsonパッケージやcsvパッケージが内部で何をしているのか想像できるようになりますし、HTTPサーバー、HTTPクライアントのところなんかも、標準パッケージをしっかり理解することでgo-chiやechoなどサードパーティモジュールが内部で何をやっているか想像できるようになる感覚は楽しかったです。&lt;/p&gt;
+
+&lt;p&gt;読んで良かった〜&lt;/p&gt;
+</description>          <pubDate>Sun, 08 May 2022 19:08:52 +0900</pubDate>
+          <guid isPermalink="false">hatenablog://entry/13574176438090485570</guid>
+
+            <category>Go</category>
+
+            <category>読書ログ</category>
+
+          <enclosure url="https://images-fe.ssl-images-amazon.com/images/I/41cBKEBEYyL._SX218_BO1,204,203,200_QL40_ML2_.jpg" type="image/jpeg" length="0" />
+        </item>
+
+
+
+
+        <item>
+          <title>『THE CULTURE CODE 最強チームをつくる方法』を読んだ</title>
+          <link>https://aboy-perry.hatenablog.com/entry/2022/05/07/000646</link>          <description>&lt;p&gt;&lt;iframe src=&quot;https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.amazon.co.jp%2Fdp%2FB07L2HDSHH&quot; title=&quot;THE CULTURE CODE 最強チームをつくる方法 | ダニエル・コイル, 楠木建, 桜田直美 | ビジネス・経済 | Kindleストア | Amazon&quot; class=&quot;embed-card embed-webcard&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&quot;&gt;&lt;/iframe&gt;&lt;cite class=&quot;hatena-citation&quot;&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/B07L2HDSHH&quot;&gt;www.amazon.co.jp&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;Amazonを見ると去年購入してたらしい。最近チーム関連の本をいくつか読んでたので、その流れでKindleのライブラリにあった本書を読みました。&lt;/p&gt;
+
+&lt;p&gt;主題としてはこんな感じ。&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;チーム力を醸成する文化は「安全な環境」「弱さの開示」「共通の目標」の3つに集約される。 p6&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;ぼくが本書で印象に残ったメッセージは「弱さを見せる（見せ合う）」と「小さなシグナルを送る」ですね。あぁ、こうやってチームを作るリーダーシップもいいじゃんと思えました。&lt;/p&gt;
+
+&lt;p&gt;チームで仕事をする = 集合知によって大きな成果を出すだと最近は思っていて&lt;a href=&quot;#f-97d913b4&quot; name=&quot;fn-97d913b4&quot; title=&quot;最近読んだ『多様性の科学　画一的で凋落する組織、複数の視点で問題を解決する組織』という本が本当に良かったので影響を受けた&quot;&gt;*1&lt;/a&gt;、「集合知」という観点と結びつけて読むことですんなり頭に入ってきて読めた感覚があります。&lt;/p&gt;
+
+&lt;p&gt;事例もどれも面白くて、特に好きなのはピクサー・ディズニーの話とベル研究所の話かな。あとレッドバルーン・チャレンジの話。挙げたらキリがないです。&lt;/p&gt;
+
+&lt;p&gt;今度はリーダーシップについての本もいくつか読もうかなぁ。&lt;/p&gt;
+&lt;div class=&quot;footnote&quot;&gt;
+&lt;p class=&quot;footnote&quot;&gt;&lt;a href=&quot;#fn-97d913b4&quot; name=&quot;f-97d913b4&quot; class=&quot;footnote-number&quot;&gt;*1&lt;/a&gt;&lt;span class=&quot;footnote-delimiter&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;footnote-text&quot;&gt;最近読んだ『多様性の科学　画一的で凋落する組織、複数の視点で問題を解決する組織』という本が本当に良かったので影響を受けた&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;</description>          <pubDate>Sat, 07 May 2022 00:06:46 +0900</pubDate>
+          <guid isPermalink="false">hatenablog://entry/13574176438089917391</guid>
+
+            <category>読書ログ</category>
+
+          <enclosure url="https://m.media-amazon.com/images/I/517hKYzMgpL._SY346_.jpg" type="image/jpeg" length="0" />
+        </item>
+
+
+
+
+        <item>
+          <title>『チームワーキング　ケースとデータで学ぶ「最強チーム」のつくり方』を読んだ</title>
+          <link>https://aboy-perry.hatenablog.com/entry/2022/05/04/001514</link>          <description>&lt;p&gt;&lt;iframe src=&quot;https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.amazon.co.jp%2Fdp%2FB08YDWXM39&quot; title=&quot;チームワーキング　ケースとデータで学ぶ「最強チーム」のつくり方 | 中原淳, 田中聡 | ビジネス・経済 | Kindleストア | Amazon&quot; class=&quot;embed-card embed-webcard&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&quot;&gt;&lt;/iframe&gt;&lt;cite class=&quot;hatena-citation&quot;&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/B08YDWXM39&quot;&gt;www.amazon.co.jp&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;kindle unlimitedだったので読んだ。&lt;/p&gt;
+
+&lt;p&gt;チームを動的なものと捉えて、成果を出すチームであるために「目標を握り続ける」「動きながら課題を探し続ける」「相互にフィードバックし続ける」という行動をとっていくと。&lt;/p&gt;
+
+&lt;p&gt;タイトルに「ケースとデータで学ぶ」とあるとおり、全体的にたくさんの実験結果が出てきました。&lt;/p&gt;
+
+&lt;p&gt;ふむふむと思いながら読みました。例えば目標にしろ戦略にしろ期初に一生懸命コストかけて立てたら一定仕事した感じになりますが、大事なのはその後継続的にその目標や戦略を検査しながら適応していくことですよね。最初にいくらコストかけてみんなで握った目標でも時間が経ってさまざまな要因によって「これって何のためにやってるんだっけ？」みたいなことを思ったりするのは至極当然のことです。&lt;/p&gt;
+
+&lt;p&gt;動的に捉えるというのは考えてみれば当たり前なのですが、こういう考え方を自分の引き出しに入れておかないと「最初にみんなで合意したじゃん！」と的外れなイライラに支配されたりしちゃうと思うので、意識したいですね。&lt;/p&gt;
+</description>          <pubDate>Wed, 04 May 2022 00:15:14 +0900</pubDate>
+          <guid isPermalink="false">hatenablog://entry/13574176438088914277</guid>
+
+            <category>読書ログ</category>
+
+          <enclosure url="https://m.media-amazon.com/images/I/51+A67d1jyL.jpg" type="image/jpeg" length="0" />
+        </item>
+
+
+
+
+        <item>
+          <title>『コンサル一年目が学ぶこと』を読んだ</title>
+          <link>https://aboy-perry.hatenablog.com/entry/2022/05/03/022758</link>          <description>&lt;p&gt;コンサル1年目どころかエンジニア8年目ですが、kindel unlimited対象だったので読んでみました。&lt;/p&gt;
+
+&lt;p&gt;内容としては社会人においては普遍的に大事なことが整理されてリストアップされてるので、たしかに一年目にこれ読んで仕事をしていくと仕事の質が上がりそうな気がしました。&lt;/p&gt;
+
+&lt;p&gt;各テーマごとに、そのテーマの最後に参考図書が紹介されています。なので本書で網羅的につまんで、より深く興味がわいた部分は参考図書を読みにいく、みたいなことをするとたくさん楽しめそう。&lt;/p&gt;
+
+&lt;p&gt;以下本書とは関係ない話。&lt;/p&gt;
+
+&lt;p&gt;ぼくが社会人なりたての研修では、プロフェッショナルとは期待を超えることだ、と外部講師に言われたのを覚えています。あとは、なんか研修を終えて新入社員が研修の感想を一人ずつ喋っていったら、その外部講師が「研修に付き合ってくれた人たちへの感謝が出てこないような新入社員に育ててしまってごめんなさい」みたいなことを泣きながら言っていてトラウマになりました。その外部講師には、その夜ひらかれた飲みの場で他の人のお皿に餃子のタレをどう入れるかを教わりました。&lt;/p&gt;
+</description>          <pubDate>Tue, 03 May 2022 02:27:58 +0900</pubDate>
+          <guid isPermalink="false">hatenablog://entry/13574176438088269150</guid>
+
+            <category>読書ログ</category>
+
+          <enclosure url="https://m.media-amazon.com/images/I/51JmlyP0HFL.jpg" type="image/jpeg" length="0" />
+        </item>
+
+
+
+
+        <item>
+          <title>「テスト駆動開発でGo言語を学びましょう」をやった</title>
+          <link>https://aboy-perry.hatenablog.com/entry/2022/05/02/032015</link>          <description>&lt;p&gt;&lt;iframe src=&quot;https://hatenablog-parts.com/embed?url=https%3A%2F%2Fandmorefine.gitbook.io%2Flearn-go-with-tests%2F&quot; title=&quot;テスト駆動開発でGO言語を学びましょう - テスト駆動開発でGO言語を学びましょう&quot; class=&quot;embed-card embed-webcard&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&quot;&gt;&lt;/iframe&gt;&lt;cite class=&quot;hatena-citation&quot;&gt;&lt;a href=&quot;https://andmorefine.gitbook.io/learn-go-with-tests/&quot;&gt;andmorefine.gitbook.io&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;TDDをしながらGoの型や標準パッケージについて学べる教材です。対象としては他の&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0%B8%C0%B8%EC&quot;&gt;プログラミング言語&lt;/a&gt;で一定経験があり、GoについてもA Tour of Goはやったことある以上の人かなという気がします。全くの未経験だとそもそもTDDやテスト、その他の概念についても理解しようと思うと頭がパンクしそうな気がしますし、Go見たことも書いたこともない人はまずA Tour of Goやりましょう。&lt;/p&gt;
+
+&lt;p&gt;良かった点は、章ごとのテーマに集中できることと、テストを書く筋肉も鍛えられるところです。章ごとに設定されているテーマ、例えば構造体の章にはポインタの説明が入ってこないのでシンプルな説明になってると思います。それからわりと厳密にTDDを回すので、Goでテストを書くにはどうしたらいいかも学べます。testing.Helperの使い方など知見も手に入ります。TDDなので、設計プロセスとしての楽しさもあります。TDD嫌いとかじゃなければ楽しめると思います。&lt;/p&gt;
+
+&lt;p&gt;微妙だった点は、日本語翻訳が不正確というか微妙なところが多かったです。&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%B5%A1%B3%A3%CB%DD%CC%F5&quot;&gt;機械翻訳&lt;/a&gt;だと思いますがさすがに質が悪いかな〜...。日本語版はforkされた&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%A5%EA%A5%DD%A5%B8%A5%C8%A5%EA&quot;&gt;リポジトリ&lt;/a&gt;で動いているので、英語でもOKな人はオリジナルのほうを見るのをオススメします。それから日本語版はごく一部動かないテストコードがありました。&lt;/p&gt;
+
+&lt;p&gt;↓オリジナルの&lt;a class=&quot;keyword&quot; href=&quot;http://d.hatena.ne.jp/keyword/%A5%EA%A5%DD%A5%B8%A5%C8%A5%EA&quot;&gt;リポジトリ&lt;/a&gt;
+&lt;iframe src=&quot;https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgithub.com%2Fquii%2Flearn-go-with-tests&quot; title=&quot;GitHub - quii/learn-go-with-tests: Learn Go with test-driven development&quot; class=&quot;embed-card embed-webcard&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&quot;&gt;&lt;/iframe&gt;&lt;cite class=&quot;hatena-citation&quot;&gt;&lt;a href=&quot;https://github.com/quii/learn-go-with-tests&quot;&gt;github.com&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;HTTPサーバーを扱う章もあるので、これからGoでWebアプリケーションを作るぞって人にもわりとオススメでし。&lt;/p&gt;
+</description>          <pubDate>Mon, 02 May 2022 03:20:15 +0900</pubDate>
+          <guid isPermalink="false">hatenablog://entry/13574176438087512811</guid>
+
+            <category>Go</category>
+
+          <enclosure url="https://cdn.blog.st-hatena.com/images/theme/og-image-1500.png" type="image/png" length="0" />
+        </item>
+
+        <item>
+          <title>『リフレクション　自分とチームの成長を加速させる内省の技術』を読んだ</title>
+          <link>https://aboy-perry.hatenablog.com/entry/2022/05/02/022844</link>          <description>&lt;p&gt;&lt;iframe src=&quot;https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.amazon.co.jp%2Fdp%2FB08WPSH9DR&quot; title=&quot;リフレクション（REFLECTION）　自分とチームの成長を加速させる内省の技術 | 熊平美香 | ビジネススキル | Kindleストア | Amazon&quot; class=&quot;embed-card embed-webcard&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
+
+&lt;p&gt;kindle unlimited対象だったので購入。&lt;/p&gt;
+
+&lt;p&gt;著者は「学習する組織」という組織論に影響されて本書を書いたとのこと。内省して過去の経験を未来に活かすために、メタ認知力を高めてこうぜって感じ。&lt;/p&gt;
+
+&lt;p&gt;ただあえて別のポイントを取り上げると、本書には多様性についての言及もあり、多様な意見は大事だよね、にとどまらずどうやってその意見を活かすか？にも踏み込んでいます。例えば、認知的多様性が高いと色々な価値観による意見が出てくるわけで、それ自体は良いことなのですが、合意形成をする難易度が上がりますよね。そこでリフレクションでいう「意見」の違いではなく背景にある「経験」「感情」「価値観」に焦点を当て共通の目的を実現するために優先すべき価値観を決めて融合させる、みたいな話が出てきます。&lt;/p&gt;
+
+&lt;p&gt;この辺はすぐにでも意識して実践できそうな考え方ですね。&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;人の話を聴くとき、多くの人が「相手の意見」に意識を集中させています。そして、その意見を理解するために、自分の経験と価値観を当てはめ、一生懸命、自分の解釈を加えながら、理解を深めようとしています。この聴き方を、永遠に続けていても、相手を理解することはできません。 p217&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;内省は自分の成長にも繋がるけど、他人との相互理解を促すツールにもなるので、チームでワークショップやっても面白そうです。&lt;/p&gt;
+</description>          <pubDate>Mon, 02 May 2022 02:28:44 +0900</pubDate>
+          <guid isPermalink="false">hatenablog://entry/13574176438088260828</guid>
+
+            <category>読書ログ</category>
+
+          <enclosure url="https://m.media-amazon.com/images/I/515yOMWbsiL.jpg" type="image/jpeg" length="0" />
+        </item>
+
+
+
+
+        <item>
+          <title>『多様性の科学　画一的で凋落する組織、複数の視点で問題を解決する組織』を読んだ</title>
+          <link>https://aboy-perry.hatenablog.com/entry/2022/05/01/150330</link>          <description>&lt;p&gt;&lt;iframe src=&quot;https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.amazon.co.jp%2Fdp%2FB0957B1LD5&quot; title=&quot;多様性の科学　画一的で凋落する組織、複数の視点で問題を解決する組織 | マシュー・サイド | ビジネス・経済 | Kindleストア | Amazon&quot; class=&quot;embed-card embed-webcard&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&quot;&gt;&lt;/iframe&gt;&lt;cite class=&quot;hatena-citation&quot;&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/B0957B1LD5&quot;&gt;www.amazon.co.jp&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;最近ぼくが所属するチームの人数がドカッと増える（と言ってもピザ2枚に収まる範囲）ので、「色んな人がいることのメリットってなんだっけ？」みたいなことを色んな角度から意識したいなと思って手に取った本です。&lt;/p&gt;
+
+&lt;p&gt;結果この本は最近読んだ本の中では抜群に面白かったです。Amazonにレビュー書こうかと思ったくらい（書いてない）。&lt;/p&gt;
+
+&lt;p&gt;そもそも多様性という言葉がすごく広いのであれなんですが、この本では「認知的多様性」が複雑な問題を解決するのにいかに重要か、逆に多様性がない画一的な集団だと何がマズいのか、を色々な事例・研究を引用しながら説明します。&lt;/p&gt;
+
+&lt;p&gt;著者は決して個人の優秀さを否定しているわけではないところもポイントです。「優秀かつ多様」であるから複雑な問題を解決できると。&lt;/p&gt;
+
+&lt;p&gt;５章エコーチェンバー現象、についてはエコーチェンバー現象について知ってる人、フィルターバブルとの違いを説明できる人なら飛ばしてもいいかもしれません。ただ書いてある事例はすごく面白かったです。&lt;/p&gt;
+
+&lt;p&gt;基本めちゃくちゃオススメなんですが、9.11事件や、いくつかの死亡事故の話も出てくるためそういった話が得意ではない人は飛ばし飛ばしになるかもしれません。&lt;/p&gt;
+</description>          <pubDate>Sun, 01 May 2022 15:03:30 +0900</pubDate>
+          <guid isPermalink="false">hatenablog://entry/13574176438088058089</guid>
+
+            <category>読書ログ</category>
+
+          <enclosure url="https://m.media-amazon.com/images/I/51z6m4a-c1S.jpg" type="image/jpeg" length="0" />
+        </item>
+
+
+
+
+        <item>
+          <title>『論点思考』を読んだ</title>
+          <link>https://aboy-perry.hatenablog.com/entry/2022/04/29/230208</link>          <description>&lt;p&gt;&lt;iframe src=&quot;https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.amazon.co.jp%2Fdp%2FB009RO867O&quot; title=&quot;論点思考 内田和成の思考 | 内田 和成 | 実践経営・リーダーシップ | Kindleストア | Amazon&quot; class=&quot;embed-card embed-webcard&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&quot;&gt;&lt;/iframe&gt;&lt;cite class=&quot;hatena-citation&quot;&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/B009RO867O&quot;&gt;www.amazon.co.jp&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;論点思考とは、解くべき問題を定義するプロセスのこと。&lt;/p&gt;
+
+&lt;p&gt;解くべき問題を見極める、みたいな考え方は『イシューからはじめよ』『ライト、ついてますか』あたりの本でも出てくる大事な考え方。&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;「あれもこれも」では結局、なにもできない p80&lt;/p&gt;
+
+&lt;p&gt;「戦略とは捨てることなり」という言葉がある。 p83&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;この重要さは最近めちゃくちゃ実感していて、やらないことを決められる人は優秀だと思うようになりました。&lt;/p&gt;
+
+&lt;p&gt;あとは、論点のレベルの違いを意識する、とか、全体像を把握しながら目の前の仕事を行うみたいなところ。とくに、二つ上のポジションに就いているつもりで仕事をする、は具体的な思考法として機能しそうでした。&lt;/p&gt;
+</description>          <pubDate>Fri, 29 Apr 2022 23:02:08 +0900</pubDate>
+          <guid isPermalink="false">hatenablog://entry/13574176438087521199</guid>
+
+            <category>読書ログ</category>
+
+          <enclosure url="https://m.media-amazon.com/images/I/51jrM2y0ypL.jpg" type="image/jpeg" length="0" />
+        </item>
+
+
+  </channel>
+</rss>
